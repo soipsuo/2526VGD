@@ -2,9 +2,7 @@ using UnityEngine;
 
 namespace TarodevController
 {
-    /// <summary>
-    /// VERY primitive animator example.
-    /// </summary>
+
     public class PlayerAnimator : MonoBehaviour
     {
         [Header("References")] [SerializeField]
