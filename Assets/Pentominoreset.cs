@@ -8,7 +8,7 @@ public class PentominoReset : MonoBehaviour
         if (collision.CompareTag("ResetCollide"))
         {
             Vector3 currentPosition = Pentomino.transform.position;
-            currentPosition.y += 10;
+            currentPosition.y += 8;
             Pentomino.transform.position = currentPosition;
         }
     }
