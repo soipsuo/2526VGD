@@ -9,6 +9,8 @@ public class doorScript : MonoBehaviour
     private Rigidbody2D rb;
     private float waitTime;
     public float ascendTime;
+    public float doorSpeed;
+    public GameObject arrow;
 
 
     private void Start()
@@ -25,10 +27,15 @@ public class doorScript : MonoBehaviour
             {
                 if (waitTime < ascendTime)
                 {
-                    Vector2 newPos = rb.position + Vector2.up * 2.5f * Time.fixedDeltaTime;
+                    Vector2 newPos = rb.position + Vector2.up * doorSpeed * Time.fixedDeltaTime;
                     rb.MovePosition(newPos);
                 } 
             }
+        }
+
+        if (waitTime >= ascendTime)
+        {
+            arrow.SetActive(true);
         }
     }
 
