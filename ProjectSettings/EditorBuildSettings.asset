@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Final Level/Final - Room 1.unity
     guid: 201ad341b91fd0f4bb04c407ffa7dd68
+  - enabled: 1
+    path: Assets/Scenes/Final Level/Final - Room 2.unity
+    guid: f8b09ee2e97479144be81c878bb23513
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
