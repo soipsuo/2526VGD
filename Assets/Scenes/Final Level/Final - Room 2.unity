@@ -960,7 +960,7 @@ MonoBehaviour:
   player: {fileID: 296829945}
   flapStrength: 8
   forwardSpeed: 3
-  flapTime: 0.3
+  flapTime: 0.1
 --- !u!1 &308078348
 GameObject:
   m_ObjectHideFlags: 0
