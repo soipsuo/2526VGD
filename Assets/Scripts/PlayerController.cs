@@ -9,6 +9,9 @@ namespace TarodevController
         [SerializeField] private ScriptableStats _stats;
         [SerializeField] private SpriteRenderer _characterSprite;
 
+        [Header("Ladder Settings")]
+        [SerializeField] private float _ladderClimbSpeed = 8f;
+
         private Rigidbody2D _rb;
         private BoxCollider2D _col;
         private Animator _anim;
@@ -17,6 +20,9 @@ namespace TarodevController
         private bool _cachedQueryStartInColliders;
 
         public Vector2 PlatformVelocity;
+
+        private bool _isTouchingLadder;
+        private bool _isClimbing;
 
         #region Interface
         public Vector2 FrameInput => _frameInput.Move;
@@ -84,6 +90,8 @@ namespace TarodevController
         {
             CheckCollisions();
 
+            HandleLadder();
+
             HandleJump();
             HandleDirection();
             HandleGravity();
@@ -125,6 +133,42 @@ namespace TarodevController
 
         #endregion
 
+        #region Ladder Logic (NEW)
+
+        private void HandleLadder()
+        {
+            if (!_isTouchingLadder)
+            {
+                _isClimbing = false;
+                return;
+            }
+
+            if (Mathf.Abs(_frameInput.Move.y) > 0.1f || _isClimbing)
+            {
+                _isClimbing = true;
+
+                _frameVelocity.y = _frameInput.Move.y * _ladderClimbSpeed;
+
+
+            }
+        }
+
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.CompareTag("Ladder")) _isTouchingLadder = true;
+        }
+
+        private void OnTriggerExit2D(Collider2D collision)
+        {
+            if (collision.CompareTag("Ladder"))
+            {
+                _isTouchingLadder = false;
+                _isClimbing = false;
+            }
+        }
+
+        #endregion
+
         #region Jumping
 
         private bool _jumpToConsume;
@@ -138,6 +182,14 @@ namespace TarodevController
 
         private void HandleJump()
         {
+            if (_isClimbing && _jumpToConsume)
+            {
+                _isClimbing = false; 
+                ExecuteJump();       
+                _jumpToConsume = false;
+                return;
+            }
+
             if (!_endedJumpEarly && !_grounded && !_frameInput.JumpHeld && _rb.linearVelocity.y > 0) _endedJumpEarly = true;
 
             if (!_jumpToConsume && !HasBufferedJump) return;
@@ -180,6 +232,8 @@ namespace TarodevController
 
         private void HandleGravity()
         {
+            if (_isClimbing) return;
+
             if (_grounded && _frameVelocity.y <= 0f)
             {
                 _frameVelocity.y = _stats.GroundingForce;
