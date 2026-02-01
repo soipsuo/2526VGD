@@ -532,7 +532,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bdec361d1728ad4a87e7fe287c56177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::killBrick
-  player: {fileID: 296829945}
   killUI: {fileID: 595447469}
   killnumbers1: {fileID: 1494007460}
   killnumbers2: {fileID: 490998582}
@@ -825,7 +824,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bdec361d1728ad4a87e7fe287c56177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::killBrick
-  player: {fileID: 296829945}
   killUI: {fileID: 595447469}
   killnumbers1: {fileID: 1494007460}
   killnumbers2: {fileID: 490998582}
@@ -962,7 +960,7 @@ Transform:
   m_GameObject: {fileID: 203314006}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 58, y: 6.4033103, z: 0}
+  m_LocalPosition: {x: 58, y: 0.17, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1040,7 +1038,7 @@ Transform:
   m_GameObject: {fileID: 268634203}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -4.85, z: 0}
+  m_LocalPosition: {x: 0, y: -5, z: 0}
   m_LocalScale: {x: 0.2, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1071,7 +1069,7 @@ Transform:
   m_GameObject: {fileID: 294494314}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -11.7, z: 0}
+  m_LocalPosition: {x: 0, y: -5, z: 0}
   m_LocalScale: {x: 0.2, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1128,7 +1126,7 @@ Transform:
   m_GameObject: {fileID: 297786841}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -11.57, z: 0}
+  m_LocalPosition: {x: 0, y: -5, z: 0}
   m_LocalScale: {x: 0.2, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1434,7 +1432,7 @@ Transform:
   m_GameObject: {fileID: 388833510}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 55, y: 6.4033103, z: 0}
+  m_LocalPosition: {x: 54.72, y: -0.11, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1830,7 +1828,7 @@ Transform:
   m_GameObject: {fileID: 534327062}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -9.67, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.6239532, y: 3.0830078, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1848,7 +1846,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bdec361d1728ad4a87e7fe287c56177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::killBrick
-  player: {fileID: 296829945}
   killUI: {fileID: 595447469}
   killnumbers1: {fileID: 1494007460}
   killnumbers2: {fileID: 490998582}
@@ -1983,7 +1980,7 @@ Transform:
   m_GameObject: {fileID: 568384289}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -11.82, z: 0}
+  m_LocalPosition: {x: 0, y: -5, z: 0}
   m_LocalScale: {x: 0.2, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2454,7 +2451,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bdec361d1728ad4a87e7fe287c56177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::killBrick
-  player: {fileID: 296829945}
   killUI: {fileID: 595447469}
   killnumbers1: {fileID: 1494007460}
   killnumbers2: {fileID: 490998582}
@@ -2610,7 +2606,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bdec361d1728ad4a87e7fe287c56177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::killBrick
-  player: {fileID: 296829945}
   killUI: {fileID: 595447469}
   killnumbers1: {fileID: 1494007460}
   killnumbers2: {fileID: 490998582}
@@ -2845,7 +2840,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bdec361d1728ad4a87e7fe287c56177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::killBrick
-  player: {fileID: 296829945}
   killUI: {fileID: 595447469}
   killnumbers1: {fileID: 1494007460}
   killnumbers2: {fileID: 490998582}
@@ -3001,7 +2995,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bdec361d1728ad4a87e7fe287c56177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::killBrick
-  player: {fileID: 296829945}
   killUI: {fileID: 595447469}
   killnumbers1: {fileID: 1494007460}
   killnumbers2: {fileID: 490998582}
@@ -3138,7 +3131,7 @@ Transform:
   m_GameObject: {fileID: 838874035}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 49, y: 6.4033103, z: 0}
+  m_LocalPosition: {x: 48.94, y: -0.06, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3237,7 +3230,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bdec361d1728ad4a87e7fe287c56177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::killBrick
-  player: {fileID: 296829945}
   killUI: {fileID: 595447469}
   killnumbers1: {fileID: 1494007460}
   killnumbers2: {fileID: 490998582}
@@ -3451,7 +3443,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bdec361d1728ad4a87e7fe287c56177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::killBrick
-  player: {fileID: 296829945}
   killUI: {fileID: 595447469}
   killnumbers1: {fileID: 1494007460}
   killnumbers2: {fileID: 490998582}
@@ -3804,7 +3795,7 @@ Transform:
   m_GameObject: {fileID: 1096424586}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -9.62, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.6239532, y: 3.0830078, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3822,7 +3813,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bdec361d1728ad4a87e7fe287c56177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::killBrick
-  player: {fileID: 296829945}
   killUI: {fileID: 595447469}
   killnumbers1: {fileID: 1494007460}
   killnumbers2: {fileID: 490998582}
@@ -3978,7 +3968,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bdec361d1728ad4a87e7fe287c56177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::killBrick
-  player: {fileID: 296829945}
   killUI: {fileID: 595447469}
   killnumbers1: {fileID: 1494007460}
   killnumbers2: {fileID: 490998582}
@@ -4113,7 +4102,7 @@ Transform:
   m_GameObject: {fileID: 1121599066}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.42, z: 0}
+  m_LocalPosition: {x: 0, y: 5, z: 0}
   m_LocalScale: {x: 0.2, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4144,7 +4133,7 @@ Transform:
   m_GameObject: {fileID: 1168284779}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.42, z: 0}
+  m_LocalPosition: {x: 0, y: 5, z: 0}
   m_LocalScale: {x: 0.2, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4196,7 +4185,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bdec361d1728ad4a87e7fe287c56177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::killBrick
-  player: {fileID: 296829945}
   killUI: {fileID: 595447469}
   killnumbers1: {fileID: 1494007460}
   killnumbers2: {fileID: 490998582}
@@ -4504,7 +4492,7 @@ Transform:
   m_GameObject: {fileID: 1276897786}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -9.56, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.6239532, y: 3.0830078, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4522,7 +4510,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bdec361d1728ad4a87e7fe287c56177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::killBrick
-  player: {fileID: 296829945}
   killUI: {fileID: 595447469}
   killnumbers1: {fileID: 1494007460}
   killnumbers2: {fileID: 490998582}
@@ -4794,7 +4781,7 @@ Transform:
   m_GameObject: {fileID: 1321838914}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.42, z: 0}
+  m_LocalPosition: {x: 0, y: 5, z: 0}
   m_LocalScale: {x: 0.2, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5337,7 +5324,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bdec361d1728ad4a87e7fe287c56177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::killBrick
-  player: {fileID: 296829945}
   killUI: {fileID: 595447469}
   killnumbers1: {fileID: 1494007460}
   killnumbers2: {fileID: 490998582}
@@ -5551,7 +5537,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bdec361d1728ad4a87e7fe287c56177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::killBrick
-  player: {fileID: 296829945}
   killUI: {fileID: 595447469}
   killnumbers1: {fileID: 1494007460}
   killnumbers2: {fileID: 490998582}
@@ -5839,7 +5824,7 @@ Transform:
   m_GameObject: {fileID: 1775716969}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -11.67, z: 0}
+  m_LocalPosition: {x: 0, y: -5, z: 0}
   m_LocalScale: {x: 0.2, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5891,7 +5876,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bdec361d1728ad4a87e7fe287c56177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::killBrick
-  player: {fileID: 296829945}
   killUI: {fileID: 595447469}
   killnumbers1: {fileID: 1494007460}
   killnumbers2: {fileID: 490998582}
@@ -6026,7 +6010,7 @@ Transform:
   m_GameObject: {fileID: 1833807594}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.42, z: 0}
+  m_LocalPosition: {x: 0, y: 5, z: 0}
   m_LocalScale: {x: 0.2, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6059,7 +6043,7 @@ Transform:
   m_GameObject: {fileID: 1876531373}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 52, y: 6.4033103, z: 0}
+  m_LocalPosition: {x: 51.94, y: -0.11, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6216,7 +6200,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bdec361d1728ad4a87e7fe287c56177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::killBrick
-  player: {fileID: 296829945}
   killUI: {fileID: 595447469}
   killnumbers1: {fileID: 1494007460}
   killnumbers2: {fileID: 490998582}
@@ -6314,7 +6297,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bdec361d1728ad4a87e7fe287c56177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::killBrick
-  player: {fileID: 296829945}
   killUI: {fileID: 595447469}
   killnumbers1: {fileID: 1494007460}
   killnumbers2: {fileID: 490998582}
@@ -6470,7 +6452,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bdec361d1728ad4a87e7fe287c56177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::killBrick
-  player: {fileID: 296829945}
   killUI: {fileID: 595447469}
   killnumbers1: {fileID: 1494007460}
   killnumbers2: {fileID: 490998582}
@@ -6626,7 +6607,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bdec361d1728ad4a87e7fe287c56177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::killBrick
-  player: {fileID: 296829945}
   killUI: {fileID: 595447469}
   killnumbers1: {fileID: 1494007460}
   killnumbers2: {fileID: 490998582}
@@ -7185,7 +7165,7 @@ Transform:
   m_GameObject: {fileID: 2121688976}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.21, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.6239532, y: 3.0830078, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7203,7 +7183,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bdec361d1728ad4a87e7fe287c56177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::killBrick
-  player: {fileID: 296829945}
   killUI: {fileID: 595447469}
   killnumbers1: {fileID: 1494007460}
   killnumbers2: {fileID: 490998582}
@@ -7478,7 +7457,7 @@ Transform:
   m_GameObject: {fileID: 2139588740}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.21, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.6239532, y: 3.0830078, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7496,7 +7475,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bdec361d1728ad4a87e7fe287c56177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::killBrick
-  player: {fileID: 296829945}
   killUI: {fileID: 595447469}
   killnumbers1: {fileID: 1494007460}
   killnumbers2: {fileID: 490998582}
@@ -7631,7 +7609,7 @@ Transform:
   m_GameObject: {fileID: 2143109984}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 4.97, z: 0}
+  m_LocalPosition: {x: 0, y: 5, z: 0}
   m_LocalScale: {x: 0.2, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
