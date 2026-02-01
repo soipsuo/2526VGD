@@ -2402,9 +2402,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::killBrick
   killUI: {fileID: 1887119950}
-  killnumbers1: {fileID: 0}
-  killnumbers2: {fileID: 0}
-  killnumbers3: {fileID: 0}
+  killnumbers1: {fileID: 539288395}
+  killnumbers2: {fileID: 1453401638}
+  killnumbers3: {fileID: 1879689842}
   waitTime: 4
 --- !u!61 &884095943
 BoxCollider2D:
