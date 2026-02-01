@@ -8,35 +8,47 @@ public class MovingPlatform : MonoBehaviour
     public int startingPoint;
     public Transform[] points;
 
-    private int i;
-    private Rigidbody2D rb;
-    private Vector2 currentVelocity;
+    private Vector2[] _fixedPoints;
+    private int _currentIndex;
+    private Rigidbody2D _rb;
+    private Vector2 _currentVelocity;
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        rb.bodyType = RigidbodyType2D.Kinematic;
-        transform.position = points[startingPoint].position;
-        i = startingPoint;
+        _rb = GetComponent<Rigidbody2D>();
+        _rb.bodyType = RigidbodyType2D.Kinematic;
+        _rb.interpolation = RigidbodyInterpolation2D.Interpolate;
+
+        // Capture the positions in world space at the start
+        // This prevents the "chasing targets" bug if they are children
+        _fixedPoints = new Vector2[points.Length];
+        for (int j = 0; j < points.Length; j++)
+        {
+            _fixedPoints[j] = points[j].position;
+        }
+
+        transform.position = _fixedPoints[startingPoint];
+        _currentIndex = startingPoint;
     }
 
     void FixedUpdate()
     {
-        Vector2 target = points[i].position;
-        Vector2 direction = (target - (Vector2)transform.position).normalized;
+        if (_fixedPoints == null || _fixedPoints.Length == 0) return;
 
-        if (Vector2.Distance(transform.position, target) < 0.05f)
+        Vector2 target = _fixedPoints[_currentIndex];
+        Vector2 currentPos = _rb.position;
+
+        // Calculate movement
+        Vector2 newPos = Vector2.MoveTowards(currentPos, target, speed * Time.fixedDeltaTime);
+        _currentVelocity = (newPos - currentPos) / Time.fixedDeltaTime;
+
+        _rb.MovePosition(newPos);
+
+        if (Vector2.Distance(currentPos, target) < 0.05f)
         {
-            i++;
-            if (i >= points.Length) i = 0;
-
-            target = points[i].position;
-            direction = (target - (Vector2)transform.position).normalized;
+            _currentIndex++;
+            if (_currentIndex >= _fixedPoints.Length) _currentIndex = 0;
         }
-
-        currentVelocity = direction * speed;
-
-        rb.MovePosition(rb.position + currentVelocity * Time.fixedDeltaTime);
     }
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -46,7 +58,11 @@ public class MovingPlatform : MonoBehaviour
             var player = collision.gameObject.GetComponent<PlayerController>();
             if (player != null)
             {
-                player.PlatformVelocity = currentVelocity;
+                // Ensure we only stick if landing on the top
+                if (collision.contacts[0].normal.y < -0.5f)
+                {
+                    player.PlatformVelocity = _currentVelocity;
+                }
             }
         }
     }
