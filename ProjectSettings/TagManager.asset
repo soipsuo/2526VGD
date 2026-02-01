@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ResetCollide
   - Terminal
+  - Ladder
   layers:
   - Default
   - TransparentFX
