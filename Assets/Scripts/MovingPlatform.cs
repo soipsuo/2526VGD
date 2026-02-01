@@ -1,119 +1,65 @@
 using UnityEngine;
-
-
+using TarodevController;
 
 [RequireComponent(typeof(Rigidbody2D))]
-
 public class MovingPlatform : MonoBehaviour
-
 {
-
     public float speed = 2f;
-
     public int startingPoint;
-
     public Transform[] points;
 
-
-
-    private Vector2[] worldPoints;
-
     private int i;
-
     private Rigidbody2D rb;
-
-
+    private Vector2 currentVelocity;
 
     void Start()
-
     {
-
         rb = GetComponent<Rigidbody2D>();
-
         rb.bodyType = RigidbodyType2D.Kinematic;
-
-
-
-        // Cache world-space positions
-
-        worldPoints = new Vector2[points.Length];
-
-        for (int j = 0; j < points.Length; j++)
-
-        {
-
-            worldPoints[j] = points[j].position;
-
-        }
-
-
-
+        transform.position = points[startingPoint].position;
         i = startingPoint;
-
-        rb.position = worldPoints[i];
-
     }
-
-
 
     void FixedUpdate()
-
     {
+        Vector2 target = points[i].position;
+        Vector2 direction = (target - (Vector2)transform.position).normalized;
 
-        Vector2 target = worldPoints[i];
-
-        Vector2 newPos = Vector2.MoveTowards(rb.position, target, speed * Time.fixedDeltaTime);
-
-        rb.MovePosition(newPos);
-
-
-
-        if (Vector2.Distance(rb.position, target) < 0.02f)
-
+        if (Vector2.Distance(transform.position, target) < 0.05f)
         {
-
             i++;
+            if (i >= points.Length) i = 0;
 
-            if (i >= worldPoints.Length)
-
-                i = 0;
-
+            target = points[i].position;
+            direction = (target - (Vector2)transform.position).normalized;
         }
 
+        currentVelocity = direction * speed;
+
+        rb.MovePosition(rb.position + currentVelocity * Time.fixedDeltaTime);
     }
 
-
-
-    // Player sticks to platform
-
-    void OnCollisionEnter2D(Collision2D collision)
-
+    private void OnCollisionStay2D(Collision2D collision)
     {
-
         if (collision.gameObject.CompareTag("Player"))
-
         {
-
-            collision.transform.SetParent(transform);
-
+            var player = collision.gameObject.GetComponent<PlayerController>();
+            if (player != null)
+            {
+                player.PlatformVelocity = currentVelocity;
+            }
         }
-
     }
 
-
-
-    void OnCollisionExit2D(Collision2D collision)
-
+    private void OnCollisionExit2D(Collision2D collision)
     {
-
         if (collision.gameObject.CompareTag("Player"))
-
         {
-
-            collision.transform.SetParent(null);
-
+            var player = collision.gameObject.GetComponent<PlayerController>();
+            if (player != null)
+            {
+                player.PlatformVelocity = Vector2.zero;
+            }
         }
-
     }
-
 }

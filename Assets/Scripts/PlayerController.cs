@@ -16,6 +16,8 @@ namespace TarodevController
         private Vector2 _frameVelocity;
         private bool _cachedQueryStartInColliders;
 
+        public Vector2 PlatformVelocity;
+
         #region Interface
         public Vector2 FrameInput => _frameInput.Move;
         public event Action<bool, float> GroundedChanged;
@@ -192,7 +194,10 @@ namespace TarodevController
 
         #endregion
 
-        private void ApplyMovement() => _rb.linearVelocity = _frameVelocity;
+        private void ApplyMovement()
+        {
+            _rb.linearVelocity = _frameVelocity + PlatformVelocity;
+        }
 
 #if UNITY_EDITOR
         private void OnValidate()
