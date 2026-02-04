@@ -22,8 +22,7 @@ public class swimmingMovement : MonoBehaviour
     {
         
         Vector2 vel = rb.linearVelocity;
-        vel.x = swimForwardSpeed;
-        rb.linearVelocity = vel;
+        
 
         if (Input.GetKey(KeyCode.W))
         {
@@ -34,10 +33,21 @@ public class swimmingMovement : MonoBehaviour
         {
             vel.y = -swimSpeed;
             rb.linearVelocity = vel;
+        } 
+        else if (Input.GetKey(KeyCode.D))
+        {
+            vel.x = swimForwardSpeed;
+            rb.linearVelocity = vel;
+        }
+        else if (Input.GetKey(KeyCode.A))
+        {
+            vel.x = -swimForwardSpeed;
+            rb.linearVelocity = vel;
         }
         else
         {
             vel.y = 0f;
+            vel.x = 0f;
             rb.linearVelocity = vel;
         }
 
