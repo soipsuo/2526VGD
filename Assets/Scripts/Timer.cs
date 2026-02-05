@@ -15,10 +15,14 @@ public class Timer : MonoBehaviour
     bool timeChanged = false;
     float t;
 
+    public bool timerFinished;
+
     private void Start()
     {
         doorControllerScript = doorControllerObject.GetComponent<doorController>();
-        t = doorControllerScript.remainingTime2;
+        t = doorControllerScript.beginningTime;
+
+        Debug.Log("t is equal to: " + t);
     }
 
     // Update is called once per frame
@@ -41,6 +45,7 @@ public class Timer : MonoBehaviour
         } else if (remainingTime < 0)
         {
             remainingTime = 0;
+            timerFinished = true;
         }
 
         int minutes = Mathf.FloorToInt(remainingTime / 60F);

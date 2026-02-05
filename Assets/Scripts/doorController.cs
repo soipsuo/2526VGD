@@ -1,13 +1,14 @@
-using UnityEngine;
-using System.Collections;
 using JetBrains.Annotations;
+using System.Collections;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class doorController : MonoBehaviour
 {
 
     public float remainingTime2;
 
-    private float beginningTime = 4.0f;
+    public float beginningTime = 4.0f;
     public GameObject warningSymbol;
     public GameObject player;
     private Rigidbody2D playerRb;
@@ -24,16 +25,24 @@ public class doorController : MonoBehaviour
 
     doorLocker doorLockerScript;
 
+    public GameObject timerControllerObject;
+
+    private Timer timerScript;
+
     public float restartTime = 30f;
     public float waitTime;
 
-    public bool canCheckTimeNow = false;
+    public bool canCheckTimeNow = true;
 
     private bool alreadyDone = false;
+
+    private bool timerLock = false;
+
 
 
     private void Start()
     {
+        timerScript = timerControllerObject.GetComponent<Timer>();
         remainingTime2 = beginningTime;
         warningSymbol.SetActive(true);
         playerRb = player.GetComponent<Rigidbody2D>();
@@ -55,50 +64,78 @@ public class doorController : MonoBehaviour
 
         }
 
-        if (beginningTime == 0f && remainingTime2 == 0f && door1locked && !door2locked)
+        if (beginningTime == 0f && timerScript.timerFinished)
         {
-            unlockDoor2();
-        } else if (beginningTime == 0f && remainingTime2 == 0f && door2locked && !door3locked)
-        {
-            unlockDoor3();
-        } else if (beginningTime == 0f && remainingTime2 == 0f && door3locked && !door4locked)
-        {
-            unlockDoor4();
+            if (door1locked && !door2locked)
+            {
+                unlockDoor2();
+            }
+            else if (door2locked && !door3locked)
+            {
+                unlockDoor3();
+            } 
+            else if (door3locked && !door4locked)
+            {
+                unlockDoor4();
+            }
+            
         }
-
 
 
     }
 
     private void unlockDoor1()
     {
-        Debug.Log("Unlocking Door 1");
+        if (timerLock)
+        {
+            return;
+        }
+
+        timerLock = true;
+        door1locked = true;
         doorLockerScript = door1.GetComponent<doorLocker>();
         StartCoroutine(restartTimer());
         doorLockerScript.LockDoors();
-        door1locked = true;
     }
 
     private void unlockDoor2()
     {
+        if (timerLock)
+        {
+            return;
+        }
+
+        timerLock = true;
+        door2locked = true;
         doorLockerScript = door2.GetComponent<doorLocker>();
         StartCoroutine(restartTimer());
         doorLockerScript.LockDoors();
-        door2locked = true;
     }
     private void unlockDoor3()
     {
+        if (timerLock)
+        {
+            return;
+        }
+
+        timerLock = true;
+        door3locked = true;
         doorLockerScript = door3.GetComponent<doorLocker>();
         StartCoroutine(restartTimer());
         doorLockerScript.LockDoors();
-        door3locked = true;
     }
     private void unlockDoor4()
     {
+        if (timerLock)
+        {
+            return;
+        }
+
+        timerLock = true;
+        door4locked = true;
         doorLockerScript = door4.GetComponent<doorLocker>();
         StartCoroutine(restartTimer());
         doorLockerScript.LockDoors();
-        door4locked = true;
     }
 
     private IEnumerator restartTimer()
@@ -106,8 +143,13 @@ public class doorController : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
         remainingTime2 = restartTime;
         canCheckTimeNow = true;
+        timerScript.timerFinished = false;
         playerRb.constraints = RigidbodyConstraints2D.None;
         playerRb.constraints = RigidbodyConstraints2D.FreezeRotation;
+
+        timerLock = false;
+
     }
+
 
 }

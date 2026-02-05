@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class doorLocker : MonoBehaviour
 {
@@ -12,6 +13,10 @@ public class doorLocker : MonoBehaviour
     private bool ifLocked = false;
     private float closeTime;
     public float lockDuration = 3.0f;
+    public bool doorsClosed = false;
+
+
+    public GameObject player;
 
     private void Start()
     {
@@ -25,19 +30,32 @@ public class doorLocker : MonoBehaviour
         ifLocked = true;
     }
 
+
     private void FixedUpdate()
     {
-        if(ifLocked && closeTime < lockDuration)
+        if (ifLocked)
         {
-            Debug.Log("Doors are locking.");
-
             closeTime += Time.fixedDeltaTime;
+            if (closeTime >= 1f)
+            {
+                if (closeTime < lockDuration)
+                {
 
-            Vector2 newBotPos = botHatchrb.position + Vector2.up * lockSpeed * Time.fixedDeltaTime;
-            botHatchrb.MovePosition(newBotPos);
-            Vector2 newTopPos = topHatchrb.position + Vector2.down * lockSpeed * Time.fixedDeltaTime;
-            topHatchrb.MovePosition(newTopPos);
+                    Vector2 newBotPos = botHatchrb.position + Vector2.up * lockSpeed * Time.fixedDeltaTime;
+                    botHatchrb.MovePosition(newBotPos);
+                    Vector2 newTopPos = topHatchrb.position + Vector2.down * lockSpeed * Time.fixedDeltaTime;
+                    topHatchrb.MovePosition(newTopPos);
+                }
+            }
         }
+
+        if (closeTime >= lockDuration)
+        {
+            doorsClosed = true;
+        }
+
     }
+
+    
 }
 
