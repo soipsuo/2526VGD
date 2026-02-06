@@ -9,10 +9,15 @@ public class triviaTimer : MonoBehaviour
     public float remainingTime;
     [SerializeField] TextMeshPro timerText;
 
+    public float delayTime = 5f;
+
 
     void Update()
     {
-        if (remainingTime > 0)
+
+        delayTime -= Time.deltaTime;
+
+        if (remainingTime > 0 && delayTime <= 0)
         {
             remainingTime -= Time.deltaTime;
         }
