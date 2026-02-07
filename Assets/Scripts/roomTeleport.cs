@@ -38,7 +38,7 @@ public class roomTeleport : MonoBehaviour
             {
                 scaleDone = true;
                 Debug.Log("Teleporting to Room2");
-                // SceneManager.LoadScene("Room2");
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
 
         }
