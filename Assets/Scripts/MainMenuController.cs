@@ -5,11 +5,11 @@ public class MainMenuController : MonoBehaviour
 {
  public void OnStartClick()
     {
-        SceneManager.LoadScene("LevelSelector");
+        SceneManager.LoadSceneAsync("LevelSelector");
     }
  public void OnSettingsClick()
     {
-        SceneManager.LoadScene("Settings");
+        SceneManager.LoadScene("Settings Screen");
     }
  public void OnExitClick()
     {
