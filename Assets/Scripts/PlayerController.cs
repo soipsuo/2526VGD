@@ -3,23 +3,31 @@ using UnityEngine;
 
 namespace TarodevController
 {
-
     [RequireComponent(typeof(Rigidbody2D), typeof(Collider2D))]
     public class PlayerController : MonoBehaviour, IPlayerController
     {
         [SerializeField] private ScriptableStats _stats;
+        [SerializeField] private SpriteRenderer _characterSprite;
+
+        [Header("Ladder Settings")]
+        [SerializeField] private float _ladderClimbSpeed = 8f;
+
         private Rigidbody2D _rb;
-        private CapsuleCollider2D _col;
+        private BoxCollider2D _col;
+        private Animator _anim;
         private FrameInput _frameInput;
         private Vector2 _frameVelocity;
         private bool _cachedQueryStartInColliders;
 
-        #region Interface
+        public Vector2 PlatformVelocity;
 
+        private bool _isTouchingLadder;
+        private bool _isClimbing;
+
+        #region Interface
         public Vector2 FrameInput => _frameInput.Move;
         public event Action<bool, float> GroundedChanged;
         public event Action Jumped;
-
         #endregion
 
         private float _time;
@@ -27,7 +35,10 @@ namespace TarodevController
         private void Awake()
         {
             _rb = GetComponent<Rigidbody2D>();
-            _col = GetComponent<CapsuleCollider2D>();
+            _col = GetComponent<BoxCollider2D>();
+
+            if (_characterSprite == null) _characterSprite = GetComponentInChildren<SpriteRenderer>();
+            _anim = _characterSprite != null ? _characterSprite.GetComponent<Animator>() : GetComponent<Animator>();
 
             _cachedQueryStartInColliders = Physics2D.queriesStartInColliders;
         }
@@ -36,6 +47,21 @@ namespace TarodevController
         {
             _time += Time.deltaTime;
             GatherInput();
+
+            if (_anim != null) _anim.SetBool("isRunning", _frameInput.Move.x != 0);
+        }
+
+        private void LateUpdate()
+        {
+            HandleSpriteFlip();
+        }
+
+        private void HandleSpriteFlip()
+        {
+            if (_characterSprite != null && _frameInput.Move.x != 0)
+            {
+                _characterSprite.flipX = _frameInput.Move.x < 0;
+            }
         }
 
         private void GatherInput()
@@ -64,15 +90,17 @@ namespace TarodevController
         {
             CheckCollisions();
 
+            HandleLadder();
+
             HandleJump();
             HandleDirection();
             HandleGravity();
-            
+
             ApplyMovement();
         }
 
         #region Collisions
-        
+
         private float _frameLeftGrounded = float.MinValue;
         private bool _grounded;
 
@@ -80,14 +108,11 @@ namespace TarodevController
         {
             Physics2D.queriesStartInColliders = false;
 
-            // Ground and Ceiling
-            bool groundHit = Physics2D.CapsuleCast(_col.bounds.center, _col.size, _col.direction, 0, Vector2.down, _stats.GrounderDistance, ~_stats.PlayerLayer);
-            bool ceilingHit = Physics2D.CapsuleCast(_col.bounds.center, _col.size, _col.direction, 0, Vector2.up, _stats.GrounderDistance, ~_stats.PlayerLayer);
+            bool groundHit = Physics2D.BoxCast(_col.bounds.center, _col.size, 0, Vector2.down, _stats.GrounderDistance, ~_stats.PlayerLayer);
+            bool ceilingHit = Physics2D.BoxCast(_col.bounds.center, _col.size, 0, Vector2.up, _stats.GrounderDistance, ~_stats.PlayerLayer);
 
-            // Hit a Ceiling
             if (ceilingHit) _frameVelocity.y = Mathf.Min(0, _frameVelocity.y);
 
-            // Landed on the Ground
             if (!_grounded && groundHit)
             {
                 _grounded = true;
@@ -96,7 +121,6 @@ namespace TarodevController
                 _endedJumpEarly = false;
                 GroundedChanged?.Invoke(true, Mathf.Abs(_frameVelocity.y));
             }
-            // Left the Ground
             else if (_grounded && !groundHit)
             {
                 _grounded = false;
@@ -109,6 +133,41 @@ namespace TarodevController
 
         #endregion
 
+        #region Ladder Logic (NEW)
+
+        private void HandleLadder()
+        {
+            if (!_isTouchingLadder)
+            {
+                _isClimbing = false;
+                return;
+            }
+
+            if (Mathf.Abs(_frameInput.Move.y) > 0.1f || _isClimbing)
+            {
+                _isClimbing = true;
+
+                _frameVelocity.y = _frameInput.Move.y * _ladderClimbSpeed;
+
+
+            }
+        }
+
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.CompareTag("Ladder")) _isTouchingLadder = true;
+        }
+
+        private void OnTriggerExit2D(Collider2D collision)
+        {
+            if (collision.CompareTag("Ladder"))
+            {
+                _isTouchingLadder = false;
+                _isClimbing = false;
+            }
+        }
+
+        #endregion
 
         #region Jumping
 
@@ -123,6 +182,14 @@ namespace TarodevController
 
         private void HandleJump()
         {
+            if (_isClimbing && _jumpToConsume)
+            {
+                _isClimbing = false; 
+                ExecuteJump();       
+                _jumpToConsume = false;
+                return;
+            }
+
             if (!_endedJumpEarly && !_grounded && !_frameInput.JumpHeld && _rb.linearVelocity.y > 0) _endedJumpEarly = true;
 
             if (!_jumpToConsume && !HasBufferedJump) return;
@@ -165,6 +232,8 @@ namespace TarodevController
 
         private void HandleGravity()
         {
+            if (_isClimbing) return;
+
             if (_grounded && _frameVelocity.y <= 0f)
             {
                 _frameVelocity.y = _stats.GroundingForce;
@@ -179,7 +248,10 @@ namespace TarodevController
 
         #endregion
 
-        private void ApplyMovement() => _rb.linearVelocity = _frameVelocity;
+        private void ApplyMovement()
+        {
+            _rb.linearVelocity = _frameVelocity + PlatformVelocity;
+        }
 
 #if UNITY_EDITOR
         private void OnValidate()
@@ -199,7 +271,6 @@ namespace TarodevController
     public interface IPlayerController
     {
         public event Action<bool, float> GroundedChanged;
-
         public event Action Jumped;
         public Vector2 FrameInput { get; }
     }

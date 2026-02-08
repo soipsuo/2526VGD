@@ -1,119 +1,81 @@
 using UnityEngine;
-
-
+using TarodevController;
 
 [RequireComponent(typeof(Rigidbody2D))]
-
 public class MovingPlatform : MonoBehaviour
-
 {
-
     public float speed = 2f;
-
     public int startingPoint;
-
     public Transform[] points;
 
-
-
-    private Vector2[] worldPoints;
-
-    private int i;
-
-    private Rigidbody2D rb;
-
-
+    private Vector2[] _fixedPoints;
+    private int _currentIndex;
+    private Rigidbody2D _rb;
+    private Vector2 _currentVelocity;
 
     void Start()
-
     {
+        _rb = GetComponent<Rigidbody2D>();
+        _rb.bodyType = RigidbodyType2D.Kinematic;
+        _rb.interpolation = RigidbodyInterpolation2D.Interpolate;
 
-        rb = GetComponent<Rigidbody2D>();
-
-        rb.bodyType = RigidbodyType2D.Kinematic;
-
-
-
-        // Cache world-space positions
-
-        worldPoints = new Vector2[points.Length];
-
+        // Capture the positions in world space at the start
+        // This prevents the "chasing targets" bug if they are children
+        _fixedPoints = new Vector2[points.Length];
         for (int j = 0; j < points.Length; j++)
-
         {
-
-            worldPoints[j] = points[j].position;
-
+            _fixedPoints[j] = points[j].position;
         }
 
-
-
-        i = startingPoint;
-
-        rb.position = worldPoints[i];
-
+        transform.position = _fixedPoints[startingPoint];
+        _currentIndex = startingPoint;
     }
-
-
 
     void FixedUpdate()
-
     {
+        if (_fixedPoints == null || _fixedPoints.Length == 0) return;
 
-        Vector2 target = worldPoints[i];
+        Vector2 target = _fixedPoints[_currentIndex];
+        Vector2 currentPos = _rb.position;
 
-        Vector2 newPos = Vector2.MoveTowards(rb.position, target, speed * Time.fixedDeltaTime);
+        // Calculate movement
+        Vector2 newPos = Vector2.MoveTowards(currentPos, target, speed * Time.fixedDeltaTime);
+        _currentVelocity = (newPos - currentPos) / Time.fixedDeltaTime;
 
-        rb.MovePosition(newPos);
+        _rb.MovePosition(newPos);
 
-
-
-        if (Vector2.Distance(rb.position, target) < 0.02f)
-
+        if (Vector2.Distance(currentPos, target) < 0.05f)
         {
-
-            i++;
-
-            if (i >= worldPoints.Length)
-
-                i = 0;
-
+            _currentIndex++;
+            if (_currentIndex >= _fixedPoints.Length) _currentIndex = 0;
         }
-
     }
 
-
-
-    // Player sticks to platform
-
-    void OnCollisionEnter2D(Collision2D collision)
-
+    private void OnCollisionStay2D(Collision2D collision)
     {
-
         if (collision.gameObject.CompareTag("Player"))
-
         {
-
-            collision.transform.SetParent(transform);
-
+            var player = collision.gameObject.GetComponent<PlayerController>();
+            if (player != null)
+            {
+                // Ensure we only stick if landing on the top
+                if (collision.contacts[0].normal.y < -0.5f)
+                {
+                    player.PlatformVelocity = _currentVelocity;
+                }
+            }
         }
-
     }
 
-
-
-    void OnCollisionExit2D(Collision2D collision)
-
+    private void OnCollisionExit2D(Collision2D collision)
     {
-
         if (collision.gameObject.CompareTag("Player"))
-
         {
-
-            collision.transform.SetParent(null);
-
+            var player = collision.gameObject.GetComponent<PlayerController>();
+            if (player != null)
+            {
+                player.PlatformVelocity = Vector2.zero;
+            }
         }
-
     }
-
 }

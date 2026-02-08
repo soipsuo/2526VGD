@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class killBrick : MonoBehaviour
 {
-    public GameObject player;
+    private GameObject player;
     public GameObject killUI;
     public GameObject killnumbers1;
     public GameObject killnumbers2;
@@ -16,6 +16,7 @@ public class killBrick : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            player = collision.gameObject;
             Debug.Log("Player collided with kill brick.");
             player.SetActive(false);
             killUI.SetActive(true);
