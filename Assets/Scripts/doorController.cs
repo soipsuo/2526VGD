@@ -1,5 +1,6 @@
 using JetBrains.Annotations;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -38,6 +39,14 @@ public class doorController : MonoBehaviour
 
     private bool timerLock = false;
 
+    private float timeLOL;
+
+    private bool warning = false;
+
+    private float count = 0f;
+
+    public GameObject Textthatsaysex;
+
 
 
     private void Start()
@@ -45,6 +54,9 @@ public class doorController : MonoBehaviour
         timerScript = timerControllerObject.GetComponent<Timer>();
         remainingTime2 = beginningTime;
         warningSymbol.SetActive(true);
+        Textthatsaysex.SetActive(true);
+        warning = true;
+        Debug.Log("warningsymbol is: " + warning);
         playerRb = player.GetComponent<Rigidbody2D>();
         playerRb.constraints = RigidbodyConstraints2D.FreezeAll;
     }
@@ -58,7 +70,7 @@ public class doorController : MonoBehaviour
         if (beginningTime <= 0f && !alreadyDone)
         {
             beginningTime = 0f;
-            warningSymbol.SetActive(false);
+            Textthatsaysex.SetActive(false);
             unlockDoor1();
             alreadyDone = true;
 
@@ -81,8 +93,34 @@ public class doorController : MonoBehaviour
             
         }
 
+        if (warning)
+        {
+            Debug.Log("warningsymbol is true");
+            timeLOL += Time.deltaTime;
+
+            if (timeLOL <= 0.5f)
+            {
+                warningSymbol.SetActive(true);
+            }
+            else if (timeLOL <= 1f)
+            {
+                warningSymbol.SetActive(false);
+            }
+            else
+            {
+                timeLOL = 0f;
+                count++;
+            }
+
+            if (count >= 3)
+            {
+                warningSymbol.SetActive(false);
+                warning = false;
+            }
+        }
 
     }
+
 
     private void unlockDoor1()
     {
@@ -134,7 +172,6 @@ public class doorController : MonoBehaviour
         timerLock = true;
         door4locked = true;
         doorLockerScript = door4.GetComponent<doorLocker>();
-        StartCoroutine(restartTimer());
         doorLockerScript.LockDoors();
     }
 
