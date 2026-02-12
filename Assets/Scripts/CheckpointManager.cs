@@ -2,16 +2,17 @@ using UnityEngine;
 
 public class CheckpointManager : MonoBehaviour
 {
-    // This stays in memory so any script can see the last position
+    // Static so the KillBrick can see it from anywhere
     public static Vector2 lastCheckpointPos;
 
     void Start()
     {
-        // Set the very first spawn point to where the player starts
-        if (lastCheckpointPos == Vector2.zero)
+        // Find the player at the start of the game and save their 
+        // starting position as the first 'checkpoint'.
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
         {
-            GameObject player = GameObject.FindGameObjectWithTag("Player");
-            if (player != null) lastCheckpointPos = player.transform.position;
+            lastCheckpointPos = player.transform.position;
         }
     }
 }

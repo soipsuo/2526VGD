@@ -1,14 +1,14 @@
 using UnityEngine;
 
-public class Checkpoint : MonoBehaviour
+public class CheckpointTrigger : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            // Update the static respawn position
+            // Update the global position
             CheckpointManager.lastCheckpointPos = transform.position;
-            Debug.Log("Checkpoint Saved!");
+            Debug.Log("Checkpoint Saved to Global Manager!");
         }
     }
 }
