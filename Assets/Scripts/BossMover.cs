@@ -15,6 +15,11 @@ public class BossMover : MonoBehaviour
 
     private bool playerDead = false;
 
+    public GameObject killnumbers1;
+    public GameObject killnumbers2;
+    public GameObject killnumbers3;
+    public GameObject killUI;
+
     void Update()
     {
         if (currentIndex >= nodes.Length) return;
@@ -36,11 +41,28 @@ public class BossMover : MonoBehaviour
 
         if(playerDead)
         {
-            timer += Time.deltaTime;
-            if(timer >= 2f)
+            if (playerDead)
             {
-                // Restart the scene or show game over screen
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                timer += Time.deltaTime;
+                if (timer >= 1f && !killnumbers1.activeSelf)
+                {
+                    killnumbers1.SetActive(true);
+                }
+
+                if (timer >= 2f && !killnumbers2.activeSelf)
+                {
+                    killnumbers2.SetActive(true);
+                }
+
+                if (timer >= 3f && !killnumbers3.activeSelf)
+                {
+                    killnumbers3.SetActive(true);
+                }
+                if (timer >= 4f)
+                {
+                    timer = 0f;
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                }
             }
         }
     }
@@ -54,6 +76,7 @@ public class BossMover : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Destroy(player);
+            killUI.SetActive(true);
             playerDead = true;
         }
     }
