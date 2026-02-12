@@ -48969,7 +48969,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CoinManager
   totalCoins: 0
-  hasKey: 0
+  heldKeys: []
 --- !u!4 &426516749
 Transform:
   m_ObjectHideFlags: 0
@@ -49004,7 +49004,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 426516747}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
@@ -55435,7 +55435,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 701c6c68bf24fbe4997fed7bd9a3de65, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -73459,46 +73459,6 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: 28, y: 24, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 0
-      m_TileSpriteIndex: 0
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
-  - first: {x: 29, y: 24, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 0
-      m_TileSpriteIndex: 0
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
-  - first: {x: 30, y: 24, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 0
-      m_TileSpriteIndex: 0
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
-  - first: {x: 31, y: 24, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 0
-      m_TileSpriteIndex: 0
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
   - first: {x: 76, y: 24, z: 0}
     second:
       serializedVersion: 2
@@ -73671,17 +73631,17 @@ Tilemap:
       m_AllTileFlags: 1073741825
   m_AnimatedTiles: {}
   m_TileAssetArray:
-  - m_RefCount: 126
+  - m_RefCount: 122
     m_Data: {fileID: 11400000, guid: 96bb0a4e7e988374f9e39643217737a2, type: 2}
   - m_RefCount: 0
     m_Data: {fileID: 0}
   m_TileSpriteArray:
-  - m_RefCount: 126
+  - m_RefCount: 122
     m_Data: {fileID: 21300000, guid: 5d57386dbc44b8e4aa2bcab119efbcac, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
   m_TileMatrixArray:
-  - m_RefCount: 126
+  - m_RefCount: 122
     m_Data:
       e00: 1
       e01: 0
@@ -73700,7 +73660,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 126
+  - m_RefCount: 122
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -73853,18 +73813,6 @@ CompositeCollider2D:
         Y: 269687488
       - X: 169687504
         Y: 269687488
-    - - X: 320312512
-        Y: 240312496
-      - X: 320312512
-        Y: 250312496
-      - X: 279062496
-        Y: 250312496
-      - X: 279062496
-        Y: 240312496
-      - X: 279687488
-        Y: 239687504
-      - X: 319687488
-        Y: 239687504
     - - X: 20312500
         Y: 240312496
       - X: 20312500
@@ -74049,12 +73997,6 @@ CompositeCollider2D:
       - {x: 11.90625, y: 28.031223}
       - {x: 11.906258, y: 27.031244}
       - {x: 11.968761, y: 26.96875}
-    - - {x: 31.96874, y: 23.96875}
-      - {x: 32.03125, y: 24.031261}
-      - {x: 32.031223, y: 25.03125}
-      - {x: 27.90625, y: 25.031221}
-      - {x: 27.906256, y: 24.031242}
-      - {x: 27.96876, y: 23.96875}
     - - {x: 1.9687393, y: 23.96875}
       - {x: 2.03125, y: 24.031261}
       - {x: 2.031221, y: 25.03125}
@@ -102508,6 +102450,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7381ee4332b09964fb4f0ea858653b1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Coin
+  coinValue: 1
+  _coinSound: {fileID: 0}
   rotationSpeed: 180
   bobHeight: 0.2
   bobSpeed: 3
