@@ -2,66 +2,87 @@ using UnityEngine;
 
 namespace TarodevController
 {
-
     public class PlayerAnimator : MonoBehaviour
     {
-        [Header("References")] [SerializeField]
-        private Animator _anim;
-
+        [Header("References")]
+        [SerializeField] private Animator _anim;
         [SerializeField] private SpriteRenderer _sprite;
 
-        [Header("Settings")] [SerializeField, Range(1f, 3f)]
-        private float _maxIdleSpeed = 2;
+        [Header("Audio Setup")]
+        [SerializeField] private AudioSource _walkingSource;
+        [SerializeField] private AudioSource _jumpSource;
+        [SerializeField] private AudioClip _jumpSound;
 
+        [Header("Settings")]
+        [SerializeField, Range(1f, 3f)] private float _maxIdleSpeed = 2;
         [SerializeField] private float _maxTilt = 5;
         [SerializeField] private float _tiltSpeed = 20;
 
-        [Header("Particles")] [SerializeField] private ParticleSystem _jumpParticles;
+        [Header("Particles")]
+        [SerializeField] private ParticleSystem _jumpParticles;
         [SerializeField] private ParticleSystem _launchParticles;
         [SerializeField] private ParticleSystem _moveParticles;
         [SerializeField] private ParticleSystem _landParticles;
 
-        [Header("Audio Clips")] [SerializeField]
-        private AudioClip[] _footsteps;
-
-        private AudioSource _source;
         private IPlayerController _player;
         private bool _grounded;
         private ParticleSystem.MinMaxGradient _currentGradient;
 
+        // This is the new variable to fix the "Start Jump"
+        private float _timeSinceStart;
+
         private void Awake()
         {
-            _source = GetComponent<AudioSource>();
             _player = GetComponentInParent<IPlayerController>();
+
+            AudioSource[] sources = GetComponents<AudioSource>();
+            if (_walkingSource == null && sources.Length > 0) _walkingSource = sources[0];
+            if (_jumpSource == null && sources.Length > 1) _jumpSource = sources[1];
         }
 
         private void OnEnable()
         {
+            if (_player == null) return;
             _player.Jumped += OnJumped;
             _player.GroundedChanged += OnGroundedChanged;
-
-            _moveParticles.Play();
         }
 
         private void OnDisable()
         {
+            if (_player == null) return;
             _player.Jumped -= OnJumped;
             _player.GroundedChanged -= OnGroundedChanged;
-
-            _moveParticles.Stop();
         }
 
         private void Update()
         {
             if (_player == null) return;
 
+            // Update the timer every frame
+            _timeSinceStart += Time.deltaTime;
+
             DetectGroundColor();
-
             HandleSpriteFlip();
-
             HandleIdleSpeed();
-
             HandleCharacterTilt();
+
+            HandleFootstepsLoop();
+        }
+
+        private void HandleFootstepsLoop()
+        {
+            if (_walkingSource == null || _walkingSource.clip == null) return;
+
+            bool isMoving = _grounded && Mathf.Abs(_player.FrameInput.x) > 0.01f;
+
+            if (isMoving)
+            {
+                if (!_walkingSource.isPlaying) _walkingSource.Play();
+            }
+            else
+            {
+                if (_walkingSource.isPlaying && _grounded) _walkingSource.Stop();
+            }
         }
 
         private void HandleSpriteFlip()
@@ -84,11 +105,20 @@ namespace TarodevController
 
         private void OnJumped()
         {
+            // FIX: If game has been running for less than 0.2 seconds, ignore the jump
+            if (_timeSinceStart < 0.2f) return;
+
             _anim.SetTrigger(JumpKey);
             _anim.ResetTrigger(GroundedKey);
 
+            if (_walkingSource != null) _walkingSource.Stop();
 
-            if (_grounded) // Avoid coyote
+            if (_jumpSound != null && _jumpSource != null)
+            {
+                _jumpSource.PlayOneShot(_jumpSound);
+            }
+
+            if (_grounded)
             {
                 SetColor(_jumpParticles);
                 SetColor(_launchParticles);
@@ -99,29 +129,27 @@ namespace TarodevController
         private void OnGroundedChanged(bool grounded, float impact)
         {
             _grounded = grounded;
-            
-            if (grounded)
+
+            // Apply the same fix to landing sounds/particles if needed
+            if (grounded && _timeSinceStart > 0.2f)
             {
                 DetectGroundColor();
                 SetColor(_landParticles);
-
                 _anim.SetTrigger(GroundedKey);
-                _source.PlayOneShot(_footsteps[Random.Range(0, _footsteps.Length)]);
                 _moveParticles.Play();
-
                 _landParticles.transform.localScale = Vector3.one * Mathf.InverseLerp(0, 40, impact);
                 _landParticles.Play();
             }
             else
             {
                 _moveParticles.Stop();
+                if (_walkingSource != null && _walkingSource.isPlaying) _walkingSource.Stop();
             }
         }
 
         private void DetectGroundColor()
         {
             var hit = Physics2D.Raycast(transform.position, Vector3.down, 2);
-
             if (!hit || hit.collider.isTrigger || !hit.transform.TryGetComponent(out SpriteRenderer r)) return;
             var color = r.color;
             _currentGradient = new ParticleSystem.MinMaxGradient(color * 0.9f, color * 1.2f);

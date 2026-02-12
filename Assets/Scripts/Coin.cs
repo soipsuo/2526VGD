@@ -2,21 +2,43 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
+    [Header("Settings")]
     public int coinValue = 1;
+    [SerializeField] private AudioClip _coinSound;
+
+    [Header("Animations")]
+    public float rotationSpeed = 180f;
+    public float bobHeight = 0.2f;
+    public float bobSpeed = 3f;
+
+    private Vector3 _startPos;
+
+    private void Start() { _startPos = transform.position; }
+
+    private void Update()
+    {
+        transform.Rotate(Vector3.up * rotationSpeed * Time.deltaTime);
+        float newY = _startPos.y + Mathf.Sin(Time.time * bobSpeed) * bobHeight;
+        transform.position = new Vector3(_startPos.x, newY, transform.position.z);
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // This talks to the Manager script above
-        if (CoinManager.Instance != null)
+        if (other.CompareTag("Player"))
         {
-            CoinManager.Instance.AddCoins(coinValue);
-        }
+            AudioSource playerSource = other.GetComponentInChildren<AudioSource>();
+            if (playerSource != null && _coinSound != null)
+            {
+                playerSource.PlayOneShot(_coinSound);
+            }
 
-        Destroy(gameObject); // Only the coin disappears
-    }
-    void Update()
-    {
-        // Spins the coin 180 degrees per second
-        transform.Rotate(Vector3.up * 180 * Time.deltaTime);
+            // This line matches the AddCoins function we just fixed
+            if (CoinManager.Instance != null)
+            {
+                CoinManager.Instance.AddCoins(coinValue);
+            }
+
+            Destroy(gameObject);
+        }
     }
 }
