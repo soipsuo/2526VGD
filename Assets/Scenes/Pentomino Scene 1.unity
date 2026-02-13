@@ -58747,7 +58747,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1707296987}
   - component: {fileID: 1707296986}
-  - component: {fileID: 1707296985}
   - component: {fileID: 1707296984}
   - component: {fileID: 1707296983}
   - component: {fileID: 1707296988}
@@ -58817,23 +58816,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.9845357, y: 0.52847934}
   m_EdgeRadius: 0
---- !u!114 &1707296985
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1707296982}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bdec361d1728ad4a87e7fe287c56177, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::killBrick
-  killUI: {fileID: 1887119950}
-  killnumbers1: {fileID: 1879689842}
-  killnumbers2: {fileID: 1453401638}
-  killnumbers3: {fileID: 539288395}
-  waitTime: 4
 --- !u!212 &1707296986
 SpriteRenderer:
   m_ObjectHideFlags: 0
