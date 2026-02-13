@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class KillBrickCheckpoint : MonoBehaviour
 {
@@ -20,8 +21,7 @@ public class KillBrickCheckpoint : MonoBehaviour
             player = collision.gameObject;
             playerCollided = true;
 
-            // 1. Disable the movement script so input can't push the player
-            // Replace 'PlayerMovement' with the actual name of your movement script
+            // Turn off movement script immediately
             var movement = player.GetComponent<MonoBehaviour>();
             if (movement != null) movement.enabled = false;
 
@@ -42,40 +42,43 @@ public class KillBrickCheckpoint : MonoBehaviour
 
             if (timer >= waitTime)
             {
-                RespawnPlayer();
+                StartCoroutine(ForceZeroRoutine());
             }
         }
     }
 
-    void RespawnPlayer()
+    IEnumerator ForceZeroRoutine()
     {
+        // 1. Teleport
+        Vector3 spawnPos = CheckpointManager.lastCheckpointPos;
+        spawnPos.z = 0;
+        player.transform.position = spawnPos;
         player.SetActive(true);
+
         Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
 
         if (rb != null)
         {
-            // 2. HARD RESET: Freeze the body completely
-            rb.bodyType = RigidbodyType2D.Kinematic;
-            rb.linearVelocity = Vector2.zero;
-            rb.angularVelocity = 0f;
+            // 2. BRUTE FORCE: Zero out velocity for 0.2 seconds
+            // This kills any "ghost" forces or buffered movement
+            float forceTime = 0.2f;
+            float elapsed = 0f;
 
-            // 3. TELEPORT: Match positions exactly
-            Vector3 spawnPos = CheckpointManager.lastCheckpointPos;
-            spawnPos.z = 0;
+            while (elapsed < forceTime)
+            {
+                rb.linearVelocity = Vector2.zero;
+                rb.angularVelocity = 0f;
+                rb.position = spawnPos; // Keep them glued to the spot
 
-            rb.position = spawnPos;
-            player.transform.position = spawnPos;
+                elapsed += Time.deltaTime;
+                yield return null; // Wait for the next frame
+            }
         }
 
+        // 3. Final Sync
         Physics2D.SyncTransforms();
 
-        if (rb != null)
-        {
-            rb.bodyType = RigidbodyType2D.Dynamic;
-            rb.linearVelocity = Vector2.zero; // Re-zeroing after switching to Dynamic
-        }
-
-        // 4. RE-ENABLE MOVEMENT: Only after physics is settled
+        // 4. Re-enable everything
         var movement = player.GetComponent<MonoBehaviour>();
         if (movement != null) movement.enabled = true;
 
