@@ -39824,6 +39824,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CoinManager
   totalCoins: 0
   heldKeys: []
+  currentLevelNumber: 2
 --- !u!4 &886222029
 Transform:
   m_ObjectHideFlags: 0

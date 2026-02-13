@@ -10,29 +10,31 @@ public class CoinManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance != null && Instance != this) { Destroy(gameObject); }
+        if (Instance != null && Instance != this) { Destroy(gameObject); return; }
         else { Instance = this; }
+
+        // --- NEW: Load saved coins from memory ---
+        totalCoins = PlayerPrefs.GetInt("SavedTotalCoins", 0);
     }
 
-    // This is the function the error is looking for!
+    public int currentLevelNumber; // Set this to 1 in Level 1, 2 in Level 2, etc.
+
     public void AddCoins(int amount)
     {
         totalCoins += amount;
-        Debug.Log("Total Coins: " + totalCoins);
+
+        // Save to the level-specific slot
+        PlayerPrefs.SetInt("Level_" + currentLevelNumber + "_Coins", totalCoins);
+
+        // Also save to the global total if you want
+        int globalTotal = PlayerPrefs.GetInt("SavedTotalCoins", 0);
+        PlayerPrefs.SetInt("SavedTotalCoins", globalTotal + amount);
+
+        PlayerPrefs.Save();
     }
 
-    public void AddKey(string keyName)
-    {
-        heldKeys.Add(keyName);
-    }
-
-    public bool HasKey(string keyName)
-    {
-        return heldKeys.Contains(keyName);
-    }
-
-    public void RemoveKey(string keyName)
-    {
-        heldKeys.Remove(keyName);
-    }
+    // ... Keep your Key functions the same ...
+    public void AddKey(string keyName) { heldKeys.Add(keyName); }
+    public bool HasKey(string keyName) { return heldKeys.Contains(keyName); }
+    public void RemoveKey(string keyName) { heldKeys.Remove(keyName); }
 }
