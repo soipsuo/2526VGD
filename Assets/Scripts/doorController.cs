@@ -45,7 +45,6 @@ public class doorController : MonoBehaviour
 
     private float count = 0f;
 
-    public GameObject Textthatsaysex;
 
 
 
@@ -54,7 +53,6 @@ public class doorController : MonoBehaviour
         timerScript = timerControllerObject.GetComponent<Timer>();
         remainingTime2 = beginningTime;
         warningSymbol.SetActive(true);
-        Textthatsaysex.SetActive(true);
         warning = true;
         Debug.Log("warningsymbol is: " + warning);
         playerRb = player.GetComponent<Rigidbody2D>();
@@ -70,7 +68,6 @@ public class doorController : MonoBehaviour
         if (beginningTime <= 0f && !alreadyDone)
         {
             beginningTime = 0f;
-            Textthatsaysex.SetActive(false);
             unlockDoor1();
             alreadyDone = true;
 

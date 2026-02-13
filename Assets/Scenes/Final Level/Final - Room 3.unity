@@ -821,7 +821,7 @@ Transform:
   m_GameObject: {fileID: 83474267}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.291, z: 0}
+  m_LocalPosition: {x: 0, y: -0.291, z: -0.36}
   m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10741,7 +10741,7 @@ Transform:
   m_GameObject: {fileID: 713893759}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.455541, y: 0.60579, z: -1.1}
+  m_LocalPosition: {x: -10.55, y: 0.60579, z: -1.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -150689,7 +150689,7 @@ Transform:
   m_GameObject: {fileID: 1609339564}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.373, z: 0}
+  m_LocalPosition: {x: 0, y: 0.373, z: -0.23}
   m_LocalScale: {x: 0.20027392, y: 0.8373, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -153364,7 +153364,6 @@ MonoBehaviour:
   restartTime: 11
   waitTime: 2.5
   canCheckTimeNow: 0
-  Textthatsaysex: {fileID: 0}
 --- !u!1 &1881700346
 GameObject:
   m_ObjectHideFlags: 0
