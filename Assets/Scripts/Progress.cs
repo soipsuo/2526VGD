@@ -3,8 +3,6 @@ using UnityEngine;
 public static class Progress
 {
     private const string KEY = "UnlockedLevel";
-
-    // Level 1 always unlocked
     public static int UnlockedLevel
     {
         get => PlayerPrefs.GetInt(KEY, 1);

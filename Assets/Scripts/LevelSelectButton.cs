@@ -9,7 +9,7 @@ public class LevelSelectButton : MonoBehaviour
     public string sceneName;
 
     [Header("Optional UI")]
-    public GameObject lockOverlay;   // a small lock icon or dark overlay
+    public GameObject lockOverlay;  
     public Button button;
 
 
