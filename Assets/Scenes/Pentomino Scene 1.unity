@@ -40601,7 +40601,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
-  m_Color: {r: 0.227451, g: 0.3529412, b: 0.63529414, a: 1}
+  m_Color: {r: 0.9294118, g: 0.48627454, b: 0.75294125, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -44324,7 +44324,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
-  m_Color: {r: 0.9294118, g: 0.48627454, b: 0.75294125, a: 1}
+  m_Color: {r: 0.227451, g: 0.3529412, b: 0.63529414, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -51721,7 +51721,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LockedDoor
   keyNeeded: MainKey
   _unlockSound: {fileID: 8300000, guid: 92687b61d05bd1448a2003612d95171f, type: 3}
-  unlockText: {fileID: 0}
+  unlockText: {fileID: 1289167365}
 --- !u!61 &1359080989
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -58651,7 +58651,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1887119951
 MonoBehaviour:
   m_ObjectHideFlags: 0
