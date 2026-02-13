@@ -769,7 +769,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelSelectButton
   levelNumber: 2
-  sceneName: 
+  sceneName: secondCutscene
   lockOverlay: {fileID: 183925651}
   button: {fileID: 1080652638}
   coinCountText: {fileID: 0}
@@ -909,7 +909,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   levelNumber: 1
-  sceneName: PongLevel
+  sceneName: BeginningCutscene1
   lockOverlay: {fileID: 0}
   button: {fileID: 1185678062}
   coinCountText: {fileID: 0}
@@ -1315,7 +1315,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelSelectButton
   levelNumber: 3
-  sceneName: 
+  sceneName: Room 1 Cutscene
   lockOverlay: {fileID: 1434058224}
   button: {fileID: 2038165575}
   coinCountText: {fileID: 0}

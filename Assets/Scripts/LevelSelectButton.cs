@@ -49,4 +49,10 @@ public class LevelSelectButton : MonoBehaviour
         if (!Progress.IsUnlocked(levelNumber)) return;
         SceneManager.LoadScene(sceneName);
     }
+
+    private void Update()
+    {
+        Progress.ResetProgress(); // For testing: reset progress every frame (remove in production)
+    }
+
 }
