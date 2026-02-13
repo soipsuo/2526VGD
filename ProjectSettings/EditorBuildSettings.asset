@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/PongLevel.unity
     guid: a5c92dc2d0c6b0a46a276a07272b5269
   - enabled: 1
+    path: Assets/Scenes/Cutscenes/secondCutscene.unity
+    guid: 84442176b5275b543af4631134d6fb35
+  - enabled: 1
     path: Assets/Scenes/Pentomino Scene 1.unity
     guid: cf676e023ec33124c97a5f9ebef7dab8
   - enabled: 1

@@ -153456,7 +153456,7 @@ MonoBehaviour:
   door4: {fileID: 1845001958}
   timerControllerObject: {fileID: 301734343}
   restartTime: 11
-  waitTime: 2.5
+  waitTime: 2
   canCheckTimeNow: 0
 --- !u!1 &1881700346
 GameObject:
