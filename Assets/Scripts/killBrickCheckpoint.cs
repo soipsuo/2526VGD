@@ -20,7 +20,7 @@ public class KillBrickCheckpoint : MonoBehaviour
             player = collision.gameObject;
             playerCollided = true;
 
-            // 1. Hide the player and show the Death UI
+            // Hide the player and show the Death UI
             player.SetActive(false);
             killUI.SetActive(true);
         }
@@ -32,12 +32,10 @@ public class KillBrickCheckpoint : MonoBehaviour
         {
             timer += Time.deltaTime;
 
-            // 2. Simple countdown logic
             if (timer >= 1f) killnumbers1.SetActive(true);
             if (timer >= 2f) killnumbers2.SetActive(true);
             if (timer >= 3f) killnumbers3.SetActive(true);
 
-            // 3. Instead of reloading the scene, we Respawn
             if (timer >= waitTime)
             {
                 RespawnPlayer();
@@ -47,8 +45,19 @@ public class KillBrickCheckpoint : MonoBehaviour
 
     void RespawnPlayer()
     {
-        // Move the player to the static checkpoint position
-        player.transform.position = CheckpointManager.lastCheckpointPos;
+        // 1. Reset Physics using modern linearVelocity API
+        Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
+        if (rb != null)
+        {
+            // linearVelocity replaces the old .velocity warning
+            rb.linearVelocity = Vector2.zero;
+            rb.angularVelocity = 0f;
+        }
+
+        // 2. Set Position (Z at 0 prevents the player spawning behind the background)
+        Vector3 spawnPos = CheckpointManager.lastCheckpointPos;
+        spawnPos.z = 0;
+        player.transform.position = spawnPos;
 
         // Reset variables and UI
         playerCollided = false;
@@ -59,7 +68,7 @@ public class KillBrickCheckpoint : MonoBehaviour
         killnumbers2.SetActive(false);
         killnumbers3.SetActive(false);
 
-        // Bring the player back
+        // 3. Bring the player back
         player.SetActive(true);
     }
 }
