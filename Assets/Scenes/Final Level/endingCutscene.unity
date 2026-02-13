@@ -452,7 +452,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 8195276273641613071, guid: 827e50d4d8728fe4a804b91b6edcff8a, type: 3}
+  m_Sprite: {fileID: -3515034136599429237, guid: 37cd413b6a834984f8c4fa25d1f27ccf, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -483,7 +483,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.AspectRatioFitter
   m_AspectMode: 3
-  m_AspectRatio: 1.6607143
+  m_AspectRatio: 1.3333334
 --- !u!1 &1013760759
 GameObject:
   m_ObjectHideFlags: 0
@@ -519,16 +519,13 @@ MonoBehaviour:
   continuePrompt: {fileID: 544885393}
   lines:
   - speaker: <b>Virus:<b>
-    text: ALRIGHT! THAT IS IT! I am sick of this. It's time for me to face you on
-      my own. You're going to be going against me for the final level.
+    text: NOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO!
   - speaker: <b>Hamster:<b>
-    text: What are you going to do against me? Beat me in a trivia match, <i>hahahaha</i>!
+    text: You've been trapped now, Mr. Virus. It's over for you now.
   - speaker: <b>Virus:<b>
-    text: No, we're going to be playing a little game of tag. I'll be the tagger,
-      and if you get tagged, it's game over for you little Hamster.
+    text: You've gotten me, good job little Hamster. You've outdone me.
   - speaker: <b>Hamster:<b>
-    text: I'll take you out before you can even reach me. Catch me if you can Mr.
-      Virus.
+    text: AND I'VE SAVED MY VIDEOGAMES! YAYYY!
   fadeDuration: 1.5
   secondsPerChar: 0.05
   endDelay: 1
@@ -599,7 +596,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 744, y: 448}
+  m_ReferenceResolution: {x: 2048, y: 1536}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
@@ -658,7 +655,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1239718013}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0

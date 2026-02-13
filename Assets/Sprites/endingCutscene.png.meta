@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 356f1f8b3ec5f1a4285c9c44eb2ce6bf
+guid: 37cd413b6a834984f8c4fa25d1f27ccf
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8195276273641613071
-    second: firewallEnding_0
+      213: -3515034136599429237
+    second: endingCutscene_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: firewallEnding_0
+      name: endingCutscene_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 744
-        height: 448
+        width: 2048
+        height: 1536
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f076896b9587bb170800000000000000
-      internalID: 8195276273641613071
+      spriteID: b8f7e928317183fc0800000000000000
+      internalID: -3515034136599429237
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      firewallEnding_0: 8195276273641613071
+      endingCutscene_0: -3515034136599429237
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

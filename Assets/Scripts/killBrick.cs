@@ -18,7 +18,7 @@ public class killBrick : MonoBehaviour
         {
             player = collision.gameObject;
             Debug.Log("Player collided with kill brick.");
-            player.SetActive(false);
+            Destroy(player);
             killUI.SetActive(true);
             playerCollided = true;
 
