@@ -10,6 +10,7 @@ public class Coin : MonoBehaviour
     public float rotationSpeed = 180f;
     public float bobHeight = 0.2f;
     public float bobSpeed = 3f;
+    public GameObject coinText;
 
     private Vector3 _startPos;
 
@@ -37,8 +38,9 @@ public class Coin : MonoBehaviour
             {
                 CoinManager.Instance.AddCoins(coinValue);
             }
-
+            
             Destroy(gameObject);
+            coinText.SetActive(false);
         }
     }
 }
