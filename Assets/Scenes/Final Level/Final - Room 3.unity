@@ -151489,6 +151489,7 @@ MonoBehaviour:
   player: {fileID: 1661886632}
   swimSpeed: 3
   swimForwardSpeed: 5
+  rotationSpeed: 5
   _swimSource: {fileID: 1661886637}
   _volume: 0.1
 --- !u!82 &1661886637
