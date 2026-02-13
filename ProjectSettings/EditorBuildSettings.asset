@@ -9,11 +9,14 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 8768fc6b04bdd0d4e892d48341bc8999
   - enabled: 1
+    path: Assets/Scenes/LevelSelector.unity
+    guid: e21667dd7f7eea74bb6ce9294df42fed
+  - enabled: 1
     path: Assets/Scenes/PongLevel.unity
     guid: a5c92dc2d0c6b0a46a276a07272b5269
   - enabled: 1
-    path: Assets/Scenes/Pentomino Scene.unity
-    guid: 74abf6a4ce7f0744d9032a5fbb59a785
+    path: Assets/Scenes/Pentomino Scene 1.unity
+    guid: cf676e023ec33124c97a5f9ebef7dab8
   - enabled: 1
     path: Assets/Scenes/Final Level/Room 1 Cutscene.unity
     guid: 52006502d338f7a40bd069d8e2d0e317
@@ -53,9 +56,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Settings Screen.unity
     guid: e110160e1fe5afa4a9acb38e38c7ff02
-  - enabled: 1
-    path: Assets/Scenes/LevelSelector.unity
-    guid: e21667dd7f7eea74bb6ce9294df42fed
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
