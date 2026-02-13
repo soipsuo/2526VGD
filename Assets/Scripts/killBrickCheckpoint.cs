@@ -45,19 +45,37 @@ public class KillBrickCheckpoint : MonoBehaviour
 
     void RespawnPlayer()
     {
-        // 1. Reset Physics using modern linearVelocity API
+        // 1. Bring the player back so we can access the Rigidbody
+        player.SetActive(true);
+
         Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
+
         if (rb != null)
         {
-            // linearVelocity replaces the old .velocity warning
+            // 2. STOP PHYSICS: Switch to Kinematic so it doesn't move or fall
+            rb.bodyType = RigidbodyType2D.Kinematic;
+
+            // Clear all current momentum
             rb.linearVelocity = Vector2.zero;
             rb.angularVelocity = 0f;
+
+            // 3. TELEPORT: Move the physics body directly
+            Vector3 spawnPos = CheckpointManager.lastCheckpointPos;
+            spawnPos.z = 0;
+
+            rb.position = spawnPos; // Move physics position
+            player.transform.position = spawnPos; // Move visual position
         }
 
-        // 2. Set Position (Z at 0 prevents the player spawning behind the background)
-        Vector3 spawnPos = CheckpointManager.lastCheckpointPos;
-        spawnPos.z = 0;
-        player.transform.position = spawnPos;
+        // 4. SYNC: Force Unity to update the teleported position immediately
+        Physics2D.SyncTransforms();
+
+        if (rb != null)
+        {
+            // 5. RESUME PHYSICS: Set back to Dynamic and ensure velocity is still zero
+            rb.bodyType = RigidbodyType2D.Dynamic;
+            rb.linearVelocity = Vector2.zero;
+        }
 
         // Reset variables and UI
         playerCollided = false;
@@ -67,8 +85,5 @@ public class KillBrickCheckpoint : MonoBehaviour
         killnumbers1.SetActive(false);
         killnumbers2.SetActive(false);
         killnumbers3.SetActive(false);
-
-        // 3. Bring the player back
-        player.SetActive(true);
     }
 }
