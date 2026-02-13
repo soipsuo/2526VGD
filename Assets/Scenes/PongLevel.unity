@@ -88257,7 +88257,7 @@ MonoBehaviour:
   killUI: {fileID: 1136604453}
   killnumbers1: {fileID: 37619941}
   killnumbers2: {fileID: 621966271}
-  killnumbers3: {fileID: 1910313537}
+  killnumbers3: {fileID: 1009757690}
   waitTime: 4
 --- !u!1 &1369829748
 GameObject:
@@ -92616,7 +92616,7 @@ MonoBehaviour:
   killUI: {fileID: 1136604453}
   killnumbers1: {fileID: 37619941}
   killnumbers2: {fileID: 621966271}
-  killnumbers3: {fileID: 1910313537}
+  killnumbers3: {fileID: 1009757690}
   waitTime: 4
 --- !u!1 &1481761643
 GameObject:
