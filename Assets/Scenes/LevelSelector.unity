@@ -755,7 +755,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   levelNumber: 1
-  sceneName: 
+  sceneName: BeginningCutscene1
   lockOverlay: {fileID: 0}
   button: {fileID: 1185678062}
 --- !u!114 &1185678062

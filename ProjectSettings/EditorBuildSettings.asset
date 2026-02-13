@@ -12,6 +12,12 @@ EditorBuildSettings:
     path: Assets/Scenes/LevelSelector.unity
     guid: e21667dd7f7eea74bb6ce9294df42fed
   - enabled: 1
+    path: Assets/Scenes/Cutscenes/BeginningCutscene1.unity
+    guid: 2c37f6697b7248d42beecd0016a271c3
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/BeginningCutscene2.unity
+    guid: 2852c949e43301848b7d8e6eba9e4f37
+  - enabled: 1
     path: Assets/Scenes/PongLevel.unity
     guid: a5c92dc2d0c6b0a46a276a07272b5269
   - enabled: 1

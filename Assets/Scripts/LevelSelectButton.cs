@@ -42,4 +42,12 @@ void Reset()
         SceneManager.LoadScene(sceneName);
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Progress.ResetProgress();
+        }
+    }
+
 }
