@@ -12918,9 +12918,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::killBrick
   killUI: {fileID: 1435125342}
-  killnumbers1: {fileID: 1742311963}
-  killnumbers2: {fileID: 1815751618}
-  killnumbers3: {fileID: 381468418}
+  killnumbers1: {fileID: 472874047}
+  killnumbers2: {fileID: 83697846}
+  killnumbers3: {fileID: 1158857666}
   waitTime: 4
 --- !u!114 &918082604
 MonoBehaviour:
@@ -36789,9 +36789,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::killBrick
   killUI: {fileID: 1435125342}
-  killnumbers1: {fileID: 1742311963}
-  killnumbers2: {fileID: 1815751618}
-  killnumbers3: {fileID: 381468418}
+  killnumbers1: {fileID: 472874047}
+  killnumbers2: {fileID: 83697846}
+  killnumbers3: {fileID: 1158857666}
   waitTime: 4
 --- !u!114 &1689210828
 MonoBehaviour:
@@ -37021,9 +37021,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::killBrick
   killUI: {fileID: 1435125342}
-  killnumbers1: {fileID: 1742311963}
-  killnumbers2: {fileID: 1815751618}
-  killnumbers3: {fileID: 381468418}
+  killnumbers1: {fileID: 472874047}
+  killnumbers2: {fileID: 83697846}
+  killnumbers3: {fileID: 1158857666}
   waitTime: 4
 --- !u!114 &1706036873
 MonoBehaviour:
@@ -39171,9 +39171,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::killBrick
   killUI: {fileID: 1435125342}
-  killnumbers1: {fileID: 1742311963}
-  killnumbers2: {fileID: 1815751618}
-  killnumbers3: {fileID: 381468418}
+  killnumbers1: {fileID: 472874047}
+  killnumbers2: {fileID: 83697846}
+  killnumbers3: {fileID: 1158857666}
   waitTime: 4
 --- !u!114 &1880750859
 MonoBehaviour:
