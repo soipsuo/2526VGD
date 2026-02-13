@@ -9,7 +9,11 @@ public class SequencePuzzle : MonoBehaviour
 
     [Header("Reward")]
     public GameObject rewardPrefab;
+    public GameObject textPrefab;
+
     public Transform spawnPoint;
+    public Transform textspawnPoint;
+
 
     private List<int> _playerInput = new List<int>();
     private bool _isSolved = false;
@@ -48,6 +52,7 @@ public class SequencePuzzle : MonoBehaviour
         if (rewardPrefab != null && spawnPoint != null)
         {
             Instantiate(rewardPrefab, spawnPoint.position, Quaternion.identity);
+            Instantiate(textPrefab, textspawnPoint.position, Quaternion.identity);
         }
     }
 }

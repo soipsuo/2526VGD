@@ -129,9 +129,9 @@ GameObject:
   m_Component:
   - component: {fileID: 35701638}
   - component: {fileID: 35701637}
-  - component: {fileID: 35701636}
   - component: {fileID: 35701635}
   - component: {fileID: 35701634}
+  - component: {fileID: 35701639}
   m_Layer: 0
   m_Name: KillBlock
   m_TagString: Untagged
@@ -198,23 +198,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 17.887484, y: 0.33630443}
   m_EdgeRadius: 0
---- !u!114 &35701636
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 35701633}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bdec361d1728ad4a87e7fe287c56177, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::killBrick
-  killUI: {fileID: 1887119950}
-  killnumbers1: {fileID: 1879689842}
-  killnumbers2: {fileID: 1453401638}
-  killnumbers3: {fileID: 539288395}
-  waitTime: 4
 --- !u!212 &35701637
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -288,6 +271,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &35701639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 35701633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe657f1d9fa228f4d9c8fdb73425fd24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KillBrickCheckpoint
+  killUI: {fileID: 1887119950}
+  killnumbers1: {fileID: 1879689842}
+  killnumbers2: {fileID: 1453401638}
+  killnumbers3: {fileID: 539288395}
+  waitTime: 4
 --- !u!1 &36993568
 GameObject:
   m_ObjectHideFlags: 0
@@ -701,7 +701,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: I must need a key for this
+  m_text: You need a key to unlock this door
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2285,7 +2285,7 @@ Transform:
   m_GameObject: {fileID: 89072277}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.77, y: -6.76, z: 0}
+  m_LocalPosition: {x: -25.99, y: -6.62, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2516,9 +2516,9 @@ GameObject:
   m_Component:
   - component: {fileID: 96495627}
   - component: {fileID: 96495631}
-  - component: {fileID: 96495630}
   - component: {fileID: 96495629}
   - component: {fileID: 96495628}
+  - component: {fileID: 96495632}
   m_Layer: 0
   m_Name: Spike
   m_TagString: Untagged
@@ -2600,23 +2600,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 3.9034643, y: 0.8235544}
   m_EdgeRadius: 0
---- !u!114 &96495630
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 96495626}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bdec361d1728ad4a87e7fe287c56177, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::killBrick
-  killUI: {fileID: 1887119950}
-  killnumbers1: {fileID: 1879689842}
-  killnumbers2: {fileID: 1453401638}
-  killnumbers3: {fileID: 539288395}
-  waitTime: 4
 --- !u!212 &96495631
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2675,6 +2658,202 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &96495632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 96495626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe657f1d9fa228f4d9c8fdb73425fd24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KillBrickCheckpoint
+  killUI: {fileID: 1887119950}
+  killnumbers1: {fileID: 1879689842}
+  killnumbers2: {fileID: 1453401638}
+  killnumbers3: {fileID: 539288395}
+  waitTime: 4
+--- !u!1 &106372943
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 106372944}
+  - component: {fileID: 106372946}
+  - component: {fileID: 106372945}
+  m_Layer: 0
+  m_Name: Text (TMP) (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &106372944
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 106372943}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.099999994, y: 0.099999994, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -260.68002, y: -65.03001}
+  m_SizeDelta: {x: 20, y: 5}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &106372945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 106372943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshPro
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: You found a coin!
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 0
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: -15.216429, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  _SortingLayer: 0
+  _SortingLayerID: 0
+  _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 106372946}
+  m_maskType: 0
+--- !u!23 &106372946
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 106372943}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &110164297
 GameObject:
   m_ObjectHideFlags: 0
@@ -2716,9 +2895,9 @@ GameObject:
   m_Component:
   - component: {fileID: 125538279}
   - component: {fileID: 125538283}
-  - component: {fileID: 125538282}
   - component: {fileID: 125538281}
   - component: {fileID: 125538280}
+  - component: {fileID: 125538284}
   m_Layer: 0
   m_Name: Spike (1)
   m_TagString: Untagged
@@ -2800,23 +2979,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.0109081, y: 2.6307783}
   m_EdgeRadius: 0
---- !u!114 &125538282
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 125538278}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bdec361d1728ad4a87e7fe287c56177, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::killBrick
-  killUI: {fileID: 1887119950}
-  killnumbers1: {fileID: 1879689842}
-  killnumbers2: {fileID: 1453401638}
-  killnumbers3: {fileID: 539288395}
-  waitTime: 4
 --- !u!212 &125538283
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2875,6 +3037,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &125538284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 125538278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe657f1d9fa228f4d9c8fdb73425fd24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KillBrickCheckpoint
+  killUI: {fileID: 1887119950}
+  killnumbers1: {fileID: 1879689842}
+  killnumbers2: {fileID: 1453401638}
+  killnumbers3: {fileID: 539288395}
+  waitTime: 4
 --- !u!1 &130842011
 GameObject:
   m_ObjectHideFlags: 0
@@ -3402,11 +3581,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1544650614272011795, guid: 88097b566ad1fdd489d7ee77465b57aa, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.32
+      value: -15.7
       objectReference: {fileID: 0}
     - target: {fileID: 1544650614272011795, guid: 88097b566ad1fdd489d7ee77465b57aa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 25.33
+      value: 26.9
       objectReference: {fileID: 0}
     - target: {fileID: 1544650614272011795, guid: 88097b566ad1fdd489d7ee77465b57aa, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4236,9 +4415,9 @@ GameObject:
   m_Component:
   - component: {fileID: 195648149}
   - component: {fileID: 195648153}
-  - component: {fileID: 195648152}
   - component: {fileID: 195648151}
   - component: {fileID: 195648150}
+  - component: {fileID: 195648154}
   m_Layer: 0
   m_Name: Spike (2)
   m_TagString: Untagged
@@ -4320,23 +4499,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.8782954, y: 0.8235544}
   m_EdgeRadius: 0
---- !u!114 &195648152
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 195648148}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bdec361d1728ad4a87e7fe287c56177, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::killBrick
-  killUI: {fileID: 1887119950}
-  killnumbers1: {fileID: 1879689842}
-  killnumbers2: {fileID: 1453401638}
-  killnumbers3: {fileID: 539288395}
-  waitTime: 4
 --- !u!212 &195648153
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4395,6 +4557,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &195648154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 195648148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe657f1d9fa228f4d9c8fdb73425fd24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KillBrickCheckpoint
+  killUI: {fileID: 1887119950}
+  killnumbers1: {fileID: 1879689842}
+  killnumbers2: {fileID: 1453401638}
+  killnumbers3: {fileID: 539288395}
+  waitTime: 4
 --- !u!1 &215165597
 GameObject:
   m_ObjectHideFlags: 0
@@ -4405,9 +4584,9 @@ GameObject:
   m_Component:
   - component: {fileID: 215165598}
   - component: {fileID: 215165602}
-  - component: {fileID: 215165601}
   - component: {fileID: 215165600}
   - component: {fileID: 215165599}
+  - component: {fileID: 215165603}
   m_Layer: 0
   m_Name: Spike (2)
   m_TagString: Untagged
@@ -4489,23 +4668,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.9883871, y: 3.788414}
   m_EdgeRadius: 0
---- !u!114 &215165601
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 215165597}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bdec361d1728ad4a87e7fe287c56177, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::killBrick
-  killUI: {fileID: 1887119950}
-  killnumbers1: {fileID: 1879689842}
-  killnumbers2: {fileID: 1453401638}
-  killnumbers3: {fileID: 539288395}
-  waitTime: 4
 --- !u!212 &215165602
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4564,6 +4726,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &215165603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215165597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe657f1d9fa228f4d9c8fdb73425fd24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KillBrickCheckpoint
+  killUI: {fileID: 1887119950}
+  killnumbers1: {fileID: 1879689842}
+  killnumbers2: {fileID: 1453401638}
+  killnumbers3: {fileID: 539288395}
+  waitTime: 4
 --- !u!1 &226956509
 GameObject:
   m_ObjectHideFlags: 0
@@ -22430,7 +22609,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SequencePuzzle
   correctSequence: 010000000200000003000000
   rewardPrefab: {fileID: 89072277}
+  textPrefab: {fileID: 106372943}
   spawnPoint: {fileID: 243152395}
+  textspawnPoint: {fileID: 1072170209}
 --- !u!4 &250915055
 Transform:
   m_ObjectHideFlags: 0
@@ -22456,9 +22637,9 @@ GameObject:
   m_Component:
   - component: {fileID: 251000494}
   - component: {fileID: 251000498}
-  - component: {fileID: 251000497}
   - component: {fileID: 251000496}
   - component: {fileID: 251000495}
+  - component: {fileID: 251000499}
   m_Layer: 0
   m_Name: Spike (2)
   m_TagString: Untagged
@@ -22540,23 +22721,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.0006173, y: 0.7531918}
   m_EdgeRadius: 0
---- !u!114 &251000497
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 251000493}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bdec361d1728ad4a87e7fe287c56177, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::killBrick
-  killUI: {fileID: 1887119950}
-  killnumbers1: {fileID: 1879689842}
-  killnumbers2: {fileID: 1453401638}
-  killnumbers3: {fileID: 539288395}
-  waitTime: 4
 --- !u!212 &251000498
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -22615,6 +22779,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &251000499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 251000493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe657f1d9fa228f4d9c8fdb73425fd24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KillBrickCheckpoint
+  killUI: {fileID: 1887119950}
+  killnumbers1: {fileID: 1879689842}
+  killnumbers2: {fileID: 1453401638}
+  killnumbers3: {fileID: 539288395}
+  waitTime: 4
 --- !u!1 &278365494
 GameObject:
   m_ObjectHideFlags: 0
@@ -33094,7 +33275,7 @@ Transform:
   m_GameObject: {fileID: 330519124}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.32, y: 27.83, z: -10}
+  m_LocalPosition: {x: -15.7, y: 29.4, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -34466,6 +34647,97 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &479647537
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 479647538}
+  - component: {fileID: 479647540}
+  - component: {fileID: 479647539}
+  m_Layer: 0
+  m_Name: 1 (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &479647538
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 479647537}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -24.48, y: 21.16, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1139097964}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &479647539
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 479647537}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &479647540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 479647537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 810e70db012fee34399c69ee109fb9ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CheckpointTrigger
 --- !u!1 &483889658
 GameObject:
   m_ObjectHideFlags: 0
@@ -36571,6 +36843,97 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &652844502
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 652844503}
+  - component: {fileID: 652844505}
+  - component: {fileID: 652844504}
+  m_Layer: 0
+  m_Name: 1 (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &652844503
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 652844502}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.49, y: 31.14, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1139097964}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &652844504
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 652844502}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &652844505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 652844502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 810e70db012fee34399c69ee109fb9ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CheckpointTrigger
 --- !u!1 &685606844
 GameObject:
   m_ObjectHideFlags: 0
@@ -36906,6 +37269,97 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &710889015
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 710889016}
+  - component: {fileID: 710889018}
+  - component: {fileID: 710889017}
+  m_Layer: 0
+  m_Name: 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &710889016
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 710889015}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.46, y: 7.14, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1139097964}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &710889017
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 710889015}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &710889018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 710889015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 810e70db012fee34399c69ee109fb9ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CheckpointTrigger
 --- !u!1 &717870602
 GameObject:
   m_ObjectHideFlags: 0
@@ -38609,6 +39063,97 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &831581681
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 831581682}
+  - component: {fileID: 831581684}
+  - component: {fileID: 831581683}
+  m_Layer: 0
+  m_Name: 1 (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &831581682
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831581681}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.43, y: 59.12, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1139097964}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &831581683
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831581681}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &831581684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831581681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 810e70db012fee34399c69ee109fb9ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CheckpointTrigger
 --- !u!1 &843529018
 GameObject:
   m_ObjectHideFlags: 0
@@ -40947,6 +41492,37 @@ Transform:
   - {fileID: 1864270958}
   m_Father: {fileID: 361297678}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1072170208
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1072170209}
+  m_Layer: 0
+  m_Name: TextSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1072170209
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1072170208}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -10.418, y: 28.204, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1078741309
 GameObject:
   m_ObjectHideFlags: 0
@@ -41136,9 +41712,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1079741357}
   - component: {fileID: 1079741361}
-  - component: {fileID: 1079741360}
   - component: {fileID: 1079741359}
   - component: {fileID: 1079741358}
+  - component: {fileID: 1079741362}
   m_Layer: 0
   m_Name: Spike
   m_TagString: Untagged
@@ -41220,23 +41796,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.0126989, y: 0.8235544}
   m_EdgeRadius: 0
---- !u!114 &1079741360
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1079741356}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bdec361d1728ad4a87e7fe287c56177, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::killBrick
-  killUI: {fileID: 1887119950}
-  killnumbers1: {fileID: 1879689842}
-  killnumbers2: {fileID: 1453401638}
-  killnumbers3: {fileID: 539288395}
-  waitTime: 4
 --- !u!212 &1079741361
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -41295,6 +41854,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1079741362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079741356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe657f1d9fa228f4d9c8fdb73425fd24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KillBrickCheckpoint
+  killUI: {fileID: 1887119950}
+  killnumbers1: {fileID: 1879689842}
+  killnumbers2: {fileID: 1453401638}
+  killnumbers3: {fileID: 539288395}
+  waitTime: 4
 --- !u!1 &1090915094
 GameObject:
   m_ObjectHideFlags: 0
@@ -42117,6 +42693,43 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1139097963
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1139097964}
+  m_Layer: 0
+  m_Name: Checkpoints
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1139097964
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1139097963}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 22.00476, y: 3.39994, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 710889016}
+  - {fileID: 479647538}
+  - {fileID: 652844503}
+  - {fileID: 1341023066}
+  - {fileID: 831581682}
+  - {fileID: 2119734178}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1141306030
 GameObject:
   m_ObjectHideFlags: 0
@@ -44296,7 +44909,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: I must need to click these buttons in some order
+  m_text: You need to click these buttons in some order
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -44780,7 +45393,7 @@ Transform:
   m_GameObject: {fileID: 1323025156}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.32, y: 27.83, z: -10}
+  m_LocalPosition: {x: -15.7, y: 29.4, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -45594,6 +46207,97 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1341023065
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1341023066}
+  - component: {fileID: 1341023068}
+  - component: {fileID: 1341023067}
+  m_Layer: 0
+  m_Name: 1 (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1341023066
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1341023065}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -24.51, y: 45.12, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1139097964}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1341023067
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1341023065}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &1341023068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1341023065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 810e70db012fee34399c69ee109fb9ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CheckpointTrigger
 --- !u!1 &1351758512
 GameObject:
   m_ObjectHideFlags: 0
@@ -51471,9 +52175,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1440369217}
   - component: {fileID: 1440369221}
-  - component: {fileID: 1440369220}
   - component: {fileID: 1440369219}
   - component: {fileID: 1440369218}
+  - component: {fileID: 1440369222}
   m_Layer: 0
   m_Name: Spike (2)
   m_TagString: Untagged
@@ -51555,23 +52259,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.9624653, y: 3.788414}
   m_EdgeRadius: 0
---- !u!114 &1440369220
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1440369216}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bdec361d1728ad4a87e7fe287c56177, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::killBrick
-  killUI: {fileID: 1887119950}
-  killnumbers1: {fileID: 1879689842}
-  killnumbers2: {fileID: 1453401638}
-  killnumbers3: {fileID: 539288395}
-  waitTime: 4
 --- !u!212 &1440369221
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -51630,6 +52317,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1440369222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1440369216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe657f1d9fa228f4d9c8fdb73425fd24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KillBrickCheckpoint
+  killUI: {fileID: 1887119950}
+  killnumbers1: {fileID: 1879689842}
+  killnumbers2: {fileID: 1453401638}
+  killnumbers3: {fileID: 539288395}
+  waitTime: 4
 --- !u!1 &1442677318
 GameObject:
   m_ObjectHideFlags: 0
@@ -53609,7 +54313,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You've ran into some acid goo.
+  m_text: You've ran into some spikes.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -55844,6 +56548,7 @@ GameObject:
   - component: {fileID: 1707296985}
   - component: {fileID: 1707296984}
   - component: {fileID: 1707296983}
+  - component: {fileID: 1707296988}
   m_Layer: 0
   m_Name: KillBlock (1)
   m_TagString: Untagged
@@ -56000,6 +56705,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1707296988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1707296982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe657f1d9fa228f4d9c8fdb73425fd24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KillBrickCheckpoint
+  killUI: {fileID: 1887119950}
+  killnumbers1: {fileID: 1879689842}
+  killnumbers2: {fileID: 1453401638}
+  killnumbers3: {fileID: 539288395}
+  waitTime: 4
 --- !u!1 &1713248851
 GameObject:
   m_ObjectHideFlags: 0
@@ -56189,9 +56911,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1724909371}
   - component: {fileID: 1724909375}
-  - component: {fileID: 1724909374}
   - component: {fileID: 1724909373}
   - component: {fileID: 1724909372}
+  - component: {fileID: 1724909376}
   m_Layer: 0
   m_Name: Spike (3)
   m_TagString: Untagged
@@ -56273,23 +56995,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.82554436, y: 4.7664185}
   m_EdgeRadius: 0
---- !u!114 &1724909374
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1724909370}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bdec361d1728ad4a87e7fe287c56177, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::killBrick
-  killUI: {fileID: 1887119950}
-  killnumbers1: {fileID: 1879689842}
-  killnumbers2: {fileID: 1453401638}
-  killnumbers3: {fileID: 539288395}
-  waitTime: 4
 --- !u!212 &1724909375
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -56348,6 +57053,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1724909376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1724909370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe657f1d9fa228f4d9c8fdb73425fd24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KillBrickCheckpoint
+  killUI: {fileID: 1887119950}
+  killnumbers1: {fileID: 1879689842}
+  killnumbers2: {fileID: 1453401638}
+  killnumbers3: {fileID: 539288395}
+  waitTime: 4
 --- !u!1 &1726609288
 GameObject:
   m_ObjectHideFlags: 0
@@ -57049,8 +57771,8 @@ Transform:
   m_GameObject: {fileID: 1874969397}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 23.11, y: 92.14, z: 0}
-  m_LocalScale: {x: 1, y: 1.8601, z: 1}
+  m_LocalPosition: {x: 23.12, y: 92.982, z: 0}
+  m_LocalScale: {x: 0.5296, y: 2.9465733, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -58467,9 +59189,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2017154533}
   - component: {fileID: 2017154532}
-  - component: {fileID: 2017154531}
   - component: {fileID: 2017154530}
   - component: {fileID: 2017154529}
+  - component: {fileID: 2017154534}
   m_Layer: 0
   m_Name: KillBlock (2)
   m_TagString: Untagged
@@ -58536,23 +59258,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.95621204, y: 0.52847934}
   m_EdgeRadius: 0
---- !u!114 &2017154531
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2017154528}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bdec361d1728ad4a87e7fe287c56177, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::killBrick
-  killUI: {fileID: 1887119950}
-  killnumbers1: {fileID: 1879689842}
-  killnumbers2: {fileID: 1453401638}
-  killnumbers3: {fileID: 539288395}
-  waitTime: 4
 --- !u!212 &2017154532
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -58626,6 +59331,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2017154534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2017154528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe657f1d9fa228f4d9c8fdb73425fd24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KillBrickCheckpoint
+  killUI: {fileID: 1887119950}
+  killnumbers1: {fileID: 1879689842}
+  killnumbers2: {fileID: 1453401638}
+  killnumbers3: {fileID: 539288395}
+  waitTime: 4
 --- !u!1 &2021068555
 GameObject:
   m_ObjectHideFlags: 0
@@ -64809,6 +65531,97 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!1 &2119734177
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2119734178}
+  - component: {fileID: 2119734180}
+  - component: {fileID: 2119734179}
+  m_Layer: 0
+  m_Name: 1 (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2119734178
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2119734177}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -24.46, y: 73.08, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1139097964}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &2119734179
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2119734177}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &2119734180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2119734177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 810e70db012fee34399c69ee109fb9ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CheckpointTrigger
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -64842,3 +65655,6 @@ SceneRoots:
   - {fileID: 1874969400}
   - {fileID: 250915055}
   - {fileID: 243152395}
+  - {fileID: 1072170209}
+  - {fileID: 1139097964}
+  - {fileID: 106372944}

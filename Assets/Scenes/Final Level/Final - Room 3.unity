@@ -148737,8 +148737,8 @@ Transform:
   m_GameObject: {fileID: 1325120049}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 159.3, y: -0.0511, z: 0}
-  m_LocalScale: {x: 0.4577, y: 4.6281023, z: 1}
+  m_LocalPosition: {x: 159.3789, y: 0.0319, z: -1}
+  m_LocalScale: {x: 0.6153907, y: 4.9425707, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 76439956}
@@ -148805,7 +148805,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.4, g: 0.105882354, b: 0.50980395, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -151490,7 +151490,7 @@ MonoBehaviour:
   swimSpeed: 3
   swimForwardSpeed: 5
   _swimSource: {fileID: 1661886637}
-  _volume: 0.5
+  _volume: 0.1
 --- !u!82 &1661886637
 AudioSource:
   m_ObjectHideFlags: 0

@@ -1712,7 +1712,7 @@ MonoBehaviour:
   flapTime: 0.1
   _sfxSource: {fileID: 296829953}
   _flapSound: {fileID: 8300000, guid: 701c6c68bf24fbe4997fed7bd9a3de65, type: 3}
-  _flapVolume: 0.5
+  _flapVolume: 0.2
 --- !u!212 &296829951
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3904,8 +3904,8 @@ Transform:
   m_GameObject: {fileID: 477969372}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 120.85, y: -0.07, z: 0}
-  m_LocalScale: {x: 1, y: 6.0178466, z: 1}
+  m_LocalPosition: {x: 121.0372, y: -0.07, z: 0}
+  m_LocalScale: {x: 0.6256, y: 6.0178466, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2048516305}
@@ -4018,7 +4018,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.4017229, g: 0.24270204, b: 0.509434, a: 1}
+  m_Color: {r: 0.4017229, g: 0.105882354, b: 0.509434, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -8743,8 +8743,8 @@ Camera:
   m_GameObject: {fileID: 1259634732}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.13207549, g: 0.13207549, b: 0.13207549, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
