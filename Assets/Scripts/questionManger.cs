@@ -18,11 +18,16 @@ public class questionManger : MonoBehaviour
     public GameObject button1;
     public GameObject button2;
 
+    public GameObject[] answers1;
+    public GameObject[] answers2;
 
     public bool question1;
     public bool question2;
     public bool question3;
     public bool question4;
+
+    private GameObject answer1;
+    private GameObject answer2;
 
     public bool question1answered = false;
     public bool question2answered = false;
@@ -61,8 +66,15 @@ public class questionManger : MonoBehaviour
         {
             if (!initialQuestion)
             {
+
+                
                 questionText.text = questions[Index];
+                answer1 = answers1[Index];
+                answer2 = answers2[Index];
+                answer1.SetActive(true);
+                answer2.SetActive(true);
                 initialQuestion = true;
+
             }
 
             if (button1Script.answered || button2Script.answered)
@@ -104,6 +116,8 @@ public class questionManger : MonoBehaviour
             button1Script.answered = false;
             question1answered = true;
             questionText.text = "Correct answer! Moving onto next question.";
+            answer1.SetActive(false);
+            answer2.SetActive(false);
             StartCoroutine(ChangeQuestion());
 
         }
@@ -111,18 +125,24 @@ public class questionManger : MonoBehaviour
         {
             StartCoroutine(ChangeQuestion());
             questionText.text = "Correct answer! Moving onto next question.";
+            answer1.SetActive(false);
+            answer2.SetActive(false);
             button2Script.answered = false;
             question1answered = true;
         }
         else if (!question1 && !question1answered && button2Script.answered)
         {
             questionText.text = "WRONG ANSWER! YOU DIED!";
+            answer1.SetActive(false);
+            answer2.SetActive(false);
             question1answered = true;
             StartCoroutine(WrongAnswer());
         }
         else if (question1 && !question1answered && button1Script.answered)
         {
             questionText.text = "WRONG ANSWER! YOU DIED!";
+            answer1.SetActive(false);
+            answer2.SetActive(false);
             question1answered = true;
             StartCoroutine(WrongAnswer());
         }
@@ -133,6 +153,8 @@ public class questionManger : MonoBehaviour
         if (!question2 && !question2answered && button1Script.answered)
         {
             button1Script.answered = false;
+            answer1.SetActive(false);
+            answer2.SetActive(false);
             question2answered = true;
             questionText.text = "Correct answer! Moving onto next question.";
             StartCoroutine(ChangeQuestion());
@@ -141,6 +163,8 @@ public class questionManger : MonoBehaviour
         else if (question2 && !question2answered && button2Script.answered)
         {
             questionText.text = "Correct answer! Moving onto next question.";
+            answer1.SetActive(false);
+            answer2.SetActive(false);
             button2Script.answered = false;
             question2answered = true;
             StartCoroutine(ChangeQuestion());
@@ -149,11 +173,15 @@ public class questionManger : MonoBehaviour
         {
             questionText.text = "WRONG ANSWER! YOU DIED!";
             question2answered = true;
+            answer1.SetActive(false);
+            answer2.SetActive(false);
             StartCoroutine(WrongAnswer());
         }
         else if (question2 && !question2answered && button1Script.answered)
         {
             questionText.text = "WRONG ANSWER! YOU DIED!";
+            answer1.SetActive(false);
+            answer2.SetActive(false);
             question2answered = true;
             StartCoroutine(WrongAnswer());
         }
@@ -164,6 +192,8 @@ public class questionManger : MonoBehaviour
         if (!question3 && !question3answered && button1Script.answered)
         {
             button1Script.answered = false;
+            answer1.SetActive(false);
+            answer2.SetActive(false);
             question3answered = true;
             questionText.text = "Correct answer! Moving onto next question.";
             StartCoroutine(ChangeQuestion());
@@ -173,18 +203,24 @@ public class questionManger : MonoBehaviour
         {
             StartCoroutine(ChangeQuestion());
             questionText.text = "Correct answer! Moving onto next question.";
+            answer1.SetActive(false);
+            answer2.SetActive(false);
             button2Script.answered = false;
             question3answered = true;
         }
         else if (!question3 && !question3answered && button2Script.answered)
         {
             questionText.text = "WRONG ANSWER! YOU DIED!";
+            answer1.SetActive(false);
+            answer2.SetActive(false);
             question3answered = true;
             StartCoroutine(WrongAnswer());
         }
         else if (question3 && !question3answered && button1Script.answered)
         {
             questionText.text = "WRONG ANSWER! YOU DIED!";
+            answer1.SetActive(false);
+            answer2.SetActive(false);
             question3answered = true;
             StartCoroutine(WrongAnswer());
         }
@@ -196,6 +232,8 @@ public class questionManger : MonoBehaviour
         {
             StartCoroutine(endScene());
             button1Script.answered = false;
+            answer1.SetActive(false);
+            answer2.SetActive(false);
             question4answered = true;
             questionText.text = "Correct answer! You survived! Congrats!";
     
@@ -203,6 +241,8 @@ public class questionManger : MonoBehaviour
         else if (question4 && !question4answered && button2Script.answered)
         {
             StartCoroutine(endScene());
+            answer1.SetActive(false);
+            answer2.SetActive(false);
             button2Script.answered = false;
             questionText.text = "Correct answer! You survived! Congrats!";
             question4answered = true;
@@ -210,12 +250,16 @@ public class questionManger : MonoBehaviour
         else if (!question4 && !question4answered && button2Script.answered)
         {
             questionText.text = "WRONG ANSWER! YOU DIED!";
+            answer1.SetActive(false);
+            answer2.SetActive(false);
             question4answered = true;
             StartCoroutine(WrongAnswer());
         }
         else if (question4 && !question4answered && button1Script.answered)
         {
             questionText.text = "WRONG ANSWER! YOU DIED!";
+            answer1.SetActive(false);
+            answer2.SetActive(false);
             question4answered = true;
             StartCoroutine(WrongAnswer());
         }
@@ -239,7 +283,11 @@ public class questionManger : MonoBehaviour
         yield return new WaitForSeconds(3);
         calledAlready = false;
         Index++;
+        answer1 = answers1[Index];
+        answer2 = answers2[Index];
         questionText.text = questions[Index];
+        answer1.SetActive(true);
+        answer2.SetActive(true);
 
     }
 
