@@ -2,6 +2,7 @@ using TMPro;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class triviaTimer : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class triviaTimer : MonoBehaviour
         else if (remainingTime < 0)
         {
             remainingTime = 0;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
         int minutes = Mathf.FloorToInt(remainingTime / 60F);
