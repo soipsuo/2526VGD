@@ -21,16 +21,15 @@ public class CoinManager : MonoBehaviour
 
     public void AddCoins(int amount)
     {
-        totalCoins += amount;
+        // Mark this specific level's coin as "1" (Found)
+        PlayerPrefs.SetInt("Level_" + currentLevelNumber + "_CoinFound", 1);
 
-        // Save to the level-specific slot
-        PlayerPrefs.SetInt("Level_" + currentLevelNumber + "_Coins", totalCoins);
-
-        // Also save to the global total if you want
+        // Still save to your global total wallet
         int globalTotal = PlayerPrefs.GetInt("SavedTotalCoins", 0);
-        PlayerPrefs.SetInt("SavedTotalCoins", globalTotal + amount);
+        PlayerPrefs.SetInt("SavedTotalCoins", globalTotal + 1);
 
         PlayerPrefs.Save();
+        Debug.Log("Level " + currentLevelNumber + " coin collected!");
     }
 
     // ... Keep your Key functions the same ...

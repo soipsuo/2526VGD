@@ -30,18 +30,17 @@ public class LevelSelectButton : MonoBehaviour
         if (lockOverlay != null)
             lockOverlay.SetActive(!unlocked);
 
-        // --- NEW: Display coins for this specific level ---
-        // We look for a save key unique to this level number
-        int coinsCollected = PlayerPrefs.GetInt("Level_" + levelNumber + "_Coins", 0);
+        // Look for the coin (1 = found, 0 = not found)
+        int coinFound = PlayerPrefs.GetInt("Level_" + levelNumber + "_CoinFound", 0);
 
-        if (coinCountText != null)
+        if (coinIcon != null)
         {
-            coinCountText.text = coinsCollected.ToString();
-            // Optional: Hide the icon/text if 0 coins collected
-            bool hasCoins = coinsCollected > 0;
-            if (coinIcon != null) coinIcon.SetActive(hasCoins);
-            coinCountText.gameObject.SetActive(hasCoins);
+            // If coinFound is 1, show the icon. If 0, hide it.
+            coinIcon.SetActive(coinFound == 1);
         }
+
+        // We don't need the text anymore since it's just one coin!
+        if (coinCountText != null) coinCountText.gameObject.SetActive(false);
     }
 
     private void HandleClick()
@@ -50,9 +49,6 @@ public class LevelSelectButton : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
-    private void Update()
-    {
-        Progress.ResetProgress(); // For testing: reset progress every frame (remove in production)
-    }
+ 
 
 }
