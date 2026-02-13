@@ -4,14 +4,14 @@ public class swimmingMovement : MonoBehaviour
 {
     public GameObject player;
     private Rigidbody2D rb;
-    private SpriteRenderer spriteRenderer; // Needed to flip the image
+    private SpriteRenderer spriteRenderer; 
 
     [Header("Movement Settings")]
     public float swimSpeed = 2f;
     public float swimForwardSpeed = 2f;
 
     [Header("Visuals")]
-    public float rotationSpeed = 5f; // How fast the sprite turns
+    public float rotationSpeed = 5f; 
 
     [Header("Audio Setup")]
     [SerializeField] private AudioSource _swimSource;
@@ -20,7 +20,7 @@ public class swimmingMovement : MonoBehaviour
     void Start()
     {
         rb = player.GetComponent<Rigidbody2D>();
-        spriteRenderer = player.GetComponent<SpriteRenderer>(); // Cache the renderer
+        spriteRenderer = player.GetComponent<SpriteRenderer>(); 
 
         if (_swimSource != null)
         {
@@ -35,7 +35,6 @@ public class swimmingMovement : MonoBehaviour
         Vector2 vel = rb.linearVelocity;
         bool isMoving = false;
 
-        // --- Movement Logic ---
         if (Input.GetKey(KeyCode.W)) { vel.y = swimSpeed; isMoving = true; }
         else if (Input.GetKey(KeyCode.S)) { vel.y = -swimSpeed; isMoving = true; }
 
@@ -47,7 +46,6 @@ public class swimmingMovement : MonoBehaviour
 
         rb.linearVelocity = vel;
 
-        // --- Visuals: Flip and Rotate ---
         if (isMoving)
         {
             HandleVisuals(vel);
@@ -60,7 +58,6 @@ public class swimmingMovement : MonoBehaviour
     {
         if (spriteRenderer == null) return;
 
-        // 1. FLIP: If moving left (negative x), flip the sprite
         if (velocity.x < 0)
         {
             spriteRenderer.flipX = true;
@@ -70,14 +67,10 @@ public class swimmingMovement : MonoBehaviour
             spriteRenderer.flipX = false;
         }
 
-        // 2. ROTATE: Look toward the direction of velocity
-        // We calculate the angle between (0,0) and our current velocity
         float angle = Mathf.Atan2(velocity.y, Mathf.Abs(velocity.x)) * Mathf.Rad2Deg;
 
-        // If we are flipped, we need to invert the rotation so it doesn't look weird
         if (spriteRenderer.flipX) angle = -angle;
 
-        // Apply a smooth rotation
         Quaternion targetRotation = Quaternion.Euler(0, 0, angle);
         player.transform.rotation = Quaternion.Lerp(player.transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
     }
@@ -92,8 +85,6 @@ public class swimmingMovement : MonoBehaviour
     private void OnDisable()
     {
         if (_swimSource != null && _swimSource.isPlaying) _swimSource.Stop();
-
-        // Reset rotation when leaving water so the player isn't sideways on land
         if (player != null) player.transform.rotation = Quaternion.identity;
     }
 }

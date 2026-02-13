@@ -1808,7 +1808,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   lines:
   - Some games made during this era of time was...
-  - Blackjack, Star Ship, and Combat.
+  - Pong, Blackjack, Star Ship, and Combat.
   triggerOnce: 1
 --- !u!61 &86722879
 BoxCollider2D:
